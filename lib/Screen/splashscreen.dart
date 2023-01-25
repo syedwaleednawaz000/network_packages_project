@@ -3,6 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:network_packages_project/Screen/bottomnaviagtionscreen.dart';
+import 'package:network_packages_project/Utils/appimages.dart';
+
+import '../Utils/appcolors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -23,11 +26,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: AppColors.backgroundBlackColor,
       body: SafeArea(
         child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AppImages.splashLogo,),fit: BoxFit.cover
+            )
+          ),
           child: Column(
-            children: [
-              Text(("Splash")),
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              // Center(child: Text(("Splash"))),
             ],
           ),
         ),

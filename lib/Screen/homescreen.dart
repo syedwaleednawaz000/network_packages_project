@@ -1,30 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
+import 'package:network_packages_project/Utils/appimages.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+  List<String> imageList = [
+    AppImages.ufoneLogo,
+    AppImages.jazzLogo,
+    AppImages.telenorLogo,
+    AppImages.waridLogo,
+    AppImages.ptclLogo,
+    AppImages.nayatelLogo
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.backgroundBlackColor,
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 20),
-          child: Column(
-            children: [
-              Container(
-                height: 57,
-                margin: const EdgeInsets.symmetric(vertical: 20),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: AppColors.containerGreyColor
-                ),
-                child: Center(
-                  child: Image.asset("assets/images/ufone_logo.png",height: 30,),
-                ),
-              )
-            ],
+          padding:  EdgeInsets.symmetric(horizontal: 20.w),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ListView.builder(
+                    itemCount: imageList.length,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                  return Container(
+                    height: 70.h,
+                    margin:  EdgeInsets.symmetric(vertical: 5.w),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white),
+                    child: Center(
+                      child: Image.asset(
+                        imageList[index],
+                        height: 50.h,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                }),
+              ],
+            ),
           ),
         ),
       ),

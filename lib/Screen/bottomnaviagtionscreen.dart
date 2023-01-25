@@ -14,10 +14,10 @@ class DashBoardScreen extends StatefulWidget {
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
   List<Widget> screens = [
-    const HomeScreen(),
-    const FavouriteScreen(),
-    const MobileCodeScreen(),
-    const AboutScreen()
+     HomeScreen(),
+     FavouriteScreen(),
+     MobileCodeScreen(),
+     AboutScreen()
   ];
 
   int index = 0;
@@ -25,7 +25,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.backgroundBlackColor,
       body: screens[index],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
