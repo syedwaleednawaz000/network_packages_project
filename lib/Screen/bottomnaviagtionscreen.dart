@@ -4,6 +4,7 @@ import 'package:network_packages_project/Screen/favouritescreen.dart';
 import 'package:network_packages_project/Screen/homescreen.dart';
 import 'package:network_packages_project/Screen/mobilecodescreen.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
+import 'package:network_packages_project/Widget/appBar.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
@@ -25,6 +26,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarWidget(),
       backgroundColor: AppColors.backgroundBlackColor,
       body: screens[index],
       bottomNavigationBar: Theme(
