@@ -32,17 +32,22 @@ class HomeScreen extends StatelessWidget {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
-                  return Container(
-                    height: 70.h,
-                    margin:  EdgeInsets.symmetric(vertical: 5.w),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white),
-                    child: Center(
-                      child: Image.asset(
-                        imageList[index],
-                        height: 50.h,
-                        fit: BoxFit.cover,
+                  return InkWell(
+                    onTap: (){
+
+                    },
+                    child: Container(
+                      height: 70.h,
+                      margin:  EdgeInsets.symmetric(vertical: 5.w),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white),
+                      child: Center(
+                        child: Image.asset(
+                          imageList[index],
+                          height: 50.h,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   );
