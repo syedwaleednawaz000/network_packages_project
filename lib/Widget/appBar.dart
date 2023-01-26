@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
+   AppBarWidget({Key? key,required  this.title}) : super(key: key);
+  String? title;
   @override
   // TODO: implement preferredSize
   Size get preferredSize =>  Size.fromHeight(50.h);
@@ -14,7 +15,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.backgroundBlackColor,
       title:  Container(
           padding: const EdgeInsets.only(left: 10),
-          child: const Text("All Network Packages")),
+          child:  Text(title.toString())),
       elevation: 0,
       automaticallyImplyLeading: false,
       actions:  [

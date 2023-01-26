@@ -26,7 +26,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(
+        title: "All Network Packages",
+      ),
       backgroundColor: AppColors.backgroundBlackColor,
       body: screens[index],
       bottomNavigationBar: Theme(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:network_packages_project/Screen/packageselection.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
 import 'package:network_packages_project/Utils/appimages.dart';
 
@@ -34,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                   return InkWell(
                     onTap: (){
-
+                      Get.to(()=> PackageSelectionScreen());
                     },
                     child: Container(
                       height: 70.h,
