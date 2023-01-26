@@ -7,5 +7,5 @@ class Modelimg{
   String ? text2;
   String ? icon;
 
-  Modelimg({this.img, this.Text,text1,this.text2,this.icon});
+  Modelimg({this.img, this.Text,this.text1,this.text2,this.icon});
 }

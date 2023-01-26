@@ -39,9 +39,9 @@ class FavouriteScreen extends StatelessWidget {
                     itemCount:_imgcontroller.getModelimgData.length,
                     itemBuilder: (context,index){
                   return Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 16),
                     child: Container(
-                      height: 70,
+                      height: 90,
                       width: double.infinity,
                       // width: 300,
                       decoration: BoxDecoration(
@@ -66,7 +66,7 @@ class FavouriteScreen extends StatelessWidget {
 
                                     Text(_imgcontroller.getModelimgData[index].text1.toString(),style: TextStyle(color: Colors.black),),
                                     SizedBox(width: 10,),
-                                    Text(_imgcontroller.getModelimgData[index].Text.toString(),style: TextStyle(color: Colors.black),)
+                                    Text(_imgcontroller.getModelimgData[index].text2.toString(),style: TextStyle(color: Colors.black),)
                                   ],
                                 ),
 
