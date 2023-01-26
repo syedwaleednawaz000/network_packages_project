@@ -36,7 +36,10 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                   return InkWell(
                     onTap: (){
-                      Get.to(()=> PackageSelectionScreen());
+                      Get.to(()=> PackageSelectionScreen(
+                        selectIndex: index,
+                        image: imageList[index],
+                      ));
                     },
                     child: Container(
                       height: 70.h,

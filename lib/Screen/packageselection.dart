@@ -5,7 +5,9 @@ import 'package:network_packages_project/Utils/appimages.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
 
 class PackageSelectionScreen extends StatelessWidget {
-  PackageSelectionScreen({Key? key}) : super(key: key);
+  PackageSelectionScreen({Key? key,required this.image,required this.selectIndex}) : super(key: key);
+  int? selectIndex;
+  String? image ;
   List<String> nameList = [
     "Hourly",
     "Daily",
@@ -51,7 +53,7 @@ class PackageSelectionScreen extends StatelessWidget {
                               width: 20.w,
                             ),
                             Image.asset(
-                              AppImages.ufoneLogo,
+                              image.toString(),
                               width: 80.w,
                               height: 60.h,
                             ),
@@ -59,43 +61,16 @@ class PackageSelectionScreen extends StatelessWidget {
                               width: 30.w,
                             ),
                             Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                SizedBox(
-                                  height: 10.w,
-                                ),
+
                                 Text(
                                   nameList[index],
-                                  style: TextStyle(color: Colors.black),
+                                  style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Colors.black),
                                 ),
-                                SizedBox(
-                                  height: 8.w,
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "test12",
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                    SizedBox(
-                                      width: 10.w,
-                                    ),
-                                    Text(
-                                      "test234",
-                                      style: TextStyle(color: Colors.black),
-                                    )
-                                  ],
-                                ),
+
                               ],
                             ),
-                            const Spacer(),
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 50.h, right: 10.w),
-                              child: Icon(
-                                Icons.favorite,
-                                color: Colors.red,
-                              ),
-                            )
                           ],
                         ),
                       ),
