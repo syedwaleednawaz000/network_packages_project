@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   List<String> imageList = [
     AppImages.ufoneLogo,
+    AppImages.zongLogo,
     AppImages.jazzLogo,
     AppImages.telenorLogo,
     AppImages.waridLogo,

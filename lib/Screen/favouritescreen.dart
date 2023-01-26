@@ -52,20 +52,19 @@ class FavouriteScreen extends StatelessWidget {
                         // width: 350,
                         child: Row(
                           children: [
-                            SizedBox(width: 20,),
-                            Image.asset(_imgcontroller.getModelimgData[index].img.toString(),width: 80,height: 60,),
-                            SizedBox(width: 30,),
+                            SizedBox(width: 20.w,),
+                            Image.asset(_imgcontroller.getModelimgData[index].img.toString(),width: 80.w,height: 60.h,),
+                            SizedBox(width: 30.w,),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                SizedBox(height: 10,),
+                                SizedBox(height: 10.w,),
                                 Text(_imgcontroller.getModelimgData[index].Text.toString(),style: TextStyle(color: Colors.black),),
-                                SizedBox(height: 8,),
+                                SizedBox(height: 8.w,),
                                 Row(
                                   children: [
-
                                     Text(_imgcontroller.getModelimgData[index].text1.toString(),style: TextStyle(color: Colors.black),),
-                                    SizedBox(width: 10,),
+                                    SizedBox(width: 10.w,),
                                     Text(_imgcontroller.getModelimgData[index].text2.toString(),style: TextStyle(color: Colors.black),)
                                   ],
                                 ),
@@ -73,10 +72,10 @@ class FavouriteScreen extends StatelessWidget {
 
                               ],
                             ),
-                            SizedBox(width: 50,),
+                            const Spacer(),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 50,left: 35),
-                              child: Icon(Icons.heart_broken,color: Colors.red,),
+                              padding:  EdgeInsets.only(bottom: 50.h,right: 10.w),
+                              child: Icon(Icons.favorite,color: Colors.red,),
                             )
                           ],
                         ),

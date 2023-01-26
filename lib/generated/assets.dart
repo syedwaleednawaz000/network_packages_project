@@ -9,5 +9,6 @@ class Assets {
   static const String imagesTelenorLogo = 'assets/images/telenor_logo.png';
   static const String imagesUfoneLogo = 'assets/images/ufone_logo.png';
   static const String imagesWaridLogo = 'assets/images/warid_logo.png';
+  static const String imagesZongLogo = 'assets/images/zong_logo.png';
 
 }
