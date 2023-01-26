@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:network_packages_project/Screen/packagedetails.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
 import 'package:network_packages_project/Utils/appimages.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
@@ -35,48 +38,56 @@ class PackageSelectionScreen extends StatelessWidget {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: Container(
-                      height: 90,
-                      width: double.infinity,
-                      // width: 300,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white),
+                  return InkWell(
+                    onTap: (){
+                      Get.to(PackageDetailsScreen(
+                        image: image,
+                      ));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 16),
                       child: Container(
-                        height: 70,
-                        // width: 350,
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 20.w,
-                            ),
-                            Image.asset(
-                              image.toString(),
-                              width: 80.w,
-                              height: 60.h,
-                            ),
-                            SizedBox(
-                              width: 30.w,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
+                        height: 90,
+                        width: double.infinity,
+                        // width: 300,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        child: Container(
+                          height: 70,
+                          // width: 350,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 20.w,
+                              ),
+                              Image.asset(
+                                image.toString(),
+                                width: 80.w,
+                                height: 60.h,
+                              ),
+                              SizedBox(
+                                width: 30.w,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
 
-                                Text(
-                                  nameList[index],
-                                  style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Colors.black),
-                                ),
+                                  Text(
+                                    nameList[index],
+                                    style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.bold,color: Colors.black),
+                                  ),
 
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   );
                 }),
+
               ],
             ),
           ),

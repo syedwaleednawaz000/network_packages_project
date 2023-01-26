@@ -6,9 +6,7 @@ import 'package:network_packages_project/Controller/imgcontroller.dart';
 
 import '../Utils/appcolors.dart';
 import '../Utils/appimages.dart';
-
 class FavouriteScreen extends StatelessWidget {
-
 
    FavouriteScreen({Key? key}) : super(key: key);
 
@@ -23,7 +21,6 @@ class FavouriteScreen extends StatelessWidget {
     Imgcontroller _imgcontroller =Get.put(Imgcontroller());
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: AppColors.backgroundBlackColor,
       body: SafeArea(
