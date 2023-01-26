@@ -42,7 +42,6 @@ class MobileCodeScreen extends StatelessWidget {
                   child: Text("iOS"),
                 ),
               )
-
             ],
           ),
         ),

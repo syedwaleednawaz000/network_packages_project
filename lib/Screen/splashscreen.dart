@@ -17,8 +17,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 2), (){
-      Get.to(()=> DashBoardScreen());
+    Timer(const Duration(seconds: 2), (){
+      Get.to(()=> const DashBoardScreen());
     });
     // TODO: implement initState
     super.initState();

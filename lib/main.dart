@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:network_packages_project/Screen/splashscreen.dart';
+import 'package:network_packages_project/Screen/test.dart';
 
 void main() {
   runApp(const MyApp());
