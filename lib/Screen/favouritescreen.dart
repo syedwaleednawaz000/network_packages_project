@@ -1,3 +1,4 @@
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,7 @@ class FavouriteScreen extends StatelessWidget {
     AppImages.ptclLogo,
     AppImages.nayatelLogo
   ];
-
+  List<String> code =[];
   List<String> NameList = [
     "Ufone",
     "Jazz",
@@ -56,6 +57,7 @@ class FavouriteScreen extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
+
                           // height: 150.h,
                           padding: EdgeInsets.only(
                               left: 15.w, right: 15.w, top: 10.h, bottom: 10.h),
@@ -84,7 +86,7 @@ class FavouriteScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: [
+                                children: const[
                                   Text('Rs 120',
                                       style: TextStyle(
                                           fontSize: 15,
@@ -157,7 +159,10 @@ class FavouriteScreen extends StatelessWidget {
                                       },
                                       child: Icon(Icons.dialer_sip_outlined)),
                                   GestureDetector(
-                                      onTap: () {}, child: Icon(Icons.copy))
+                                      onTap: () {
+                                        FlutterClipboard.copy('hekkk').then(( value ) =>
+                                            print('copied'));
+                                      }, child: Icon(Icons.copy))
                                 ],
                               )
                             ],
