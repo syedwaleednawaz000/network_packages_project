@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:network_packages_project/Controller/imgcontroller.dart';
+import 'package:network_packages_project/Utils/appcontant.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../Utils/appcolors.dart';
@@ -21,7 +22,14 @@ class FavouriteScreen extends StatelessWidget {
     AppImages.ptclLogo,
     AppImages.nayatelLogo
   ];
-  List<String> code =[];
+  List<String> codeNumber =[
+    "123",
+    "234",
+    "345",
+    "456",
+    "5676",
+    "567",
+  ];
   List<String> NameList = [
     "Ufone",
     "Jazz",
@@ -107,7 +115,7 @@ class FavouriteScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: [
+                                children: const [
                                   Text('MB 1000',
                                       style: TextStyle(
                                           fontSize: 15,
@@ -128,14 +136,14 @@ class FavouriteScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: [
+                                children:  [
                                   Text(
-                                    'Activation Code: 2123',
+                                    'Activation Code: ${codeNumber[index]}',
                                     style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Text('Deactivation Code: 2143',
+                                  const Text('Deactivation Code: 2143',
                                       style: TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold)),
@@ -152,7 +160,7 @@ class FavouriteScreen extends StatelessWidget {
                                       onTap: () {
                                         ShareText();
                                       },
-                                      child: Icon(Icons.share_outlined)),
+                                      child: const Icon(Icons.share_outlined)),
                                   GestureDetector(
                                       onTap: () {
                                         _callNumber(number: '232');
@@ -160,8 +168,10 @@ class FavouriteScreen extends StatelessWidget {
                                       child: Icon(Icons.dialer_sip_outlined)),
                                   GestureDetector(
                                       onTap: () {
-                                        FlutterClipboard.copy('hekkk').then(( value ) =>
-                                            print('copied'));
+                                        FlutterClipboard.copy(codeNumber[index]).then(( value ) {
+                                          AppConstant.flutterToast();
+                                          print('copied');
+                                        });
                                       }, child: Icon(Icons.copy))
                                 ],
                               )

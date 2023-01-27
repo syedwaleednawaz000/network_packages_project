@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
+import 'package:network_packages_project/Utils/appcontant.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:file_picker/file_picker.dart';
@@ -132,7 +134,12 @@ class PackageDetailsScreen extends StatelessWidget {
                                     },
                                     child: Icon(Icons.dialer_sip_outlined)),
                                 GestureDetector(
-                                    onTap: () {}, child: Icon(Icons.copy))
+                                    onTap: () {
+                                      FlutterClipboard.copy("just for test").then(( value ) {
+                                        AppConstant.flutterToast();
+                                        print('copied');
+                                      });
+                                    }, child: Icon(Icons.copy))
                               ],
                             )
                           ],
