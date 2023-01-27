@@ -23,7 +23,7 @@ class PackageDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundBlackColor,
-      appBar: AppBarWidget(title: "All Details Of Package"),
+      appBar: AppBarWidget(title: " Details Of Package"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: SingleChildScrollView(

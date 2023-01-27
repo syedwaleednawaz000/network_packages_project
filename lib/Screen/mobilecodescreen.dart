@@ -35,8 +35,14 @@ class MobileCodeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white),
-                  child: const Center(
-                    child: Text("Android"),
+                  child:  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Image.asset('assets/images/android_logo.png',width: 80.w,height: 70.h,),
+                      SizedBox(width: 10.h,),
+                      Text('Secret key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
+                    ],
                   ),
                 ),
               ),
@@ -53,8 +59,15 @@ class MobileCodeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white),
-                  child: const Center(
-                    child: Text("iOS"),
+                  child:  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+
+                      Image.asset('assets/images/ios_logo.png',width: 100.w,height: 80.h,),
+                      SizedBox(width: 10.h,),
+                      Text('Secret key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
+                    ],
                   ),
                 ),
               )

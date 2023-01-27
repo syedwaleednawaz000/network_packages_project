@@ -1,48 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../Utils/appcolors.dart';
+import 'aboutscreenpage.dart';
+import 'complainetscreenpage.dart';
+import 'contactscreenpage.dart';
+import 'notificationscreen.dart';
 
 class AboutScreen extends StatefulWidget {
-   AboutScreen({Key? key}) : super(key: key);
+  AboutScreen({Key? key}) : super(key: key);
 
   @override
   State<AboutScreen> createState() => _AboutScreenState();
 }
 
 class _AboutScreenState extends State<AboutScreen> {
-  bool notification=false;
+  bool notification = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundBlackColor,
       body: SafeArea(
-        child: Container(
-
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                 GestureDetector(
+                   onTap: (){
+                     Get.to(NotificationScreen());
+                   },
+                   child: const Text(
+                      "Notification",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                 ),
+                  Switch(
+                      value: notification,
+                      onChanged: (value) {
+                        setState(() {
+                          notification = value;
+                        });
+                      }),
+                ],
+              ),
+            SizedBox(height: 15,),
 
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Text("Notification",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),),
-                   Switch(value: notification, onChanged: (value){
-                     setState(() {
-                       notification=value;
-                     });
-                   }),
-                 ],
+               GestureDetector(
+                 onTap: (){
+                   Get.to(AboutScreenPage());
+                 },
+                 child: const Text("About us",
+
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20)),
                ),
-               SizedBox(height: 30,),
-                           SizedBox(height: 30,),
-               Text("About us",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20)),
-              SizedBox(height: 30,),
-               Text("Contact us",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20)),
-              SizedBox(height: 30,),
-              Text("complaint",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20)),
-
-
+              SizedBox(
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: (){
+                  Get.to(ContactScreenPage());
+                },
+                child: Text("Contact us",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20)),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: (){
+                  Get.to(ComplainentScreenPage());
+                },
+                child: Text("complaint",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20)),
+              ),
             ],
           ),
         ),
@@ -50,5 +97,3 @@ class _AboutScreenState extends State<AboutScreen> {
     );
   }
 }
-
-
