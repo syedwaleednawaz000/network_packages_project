@@ -26,11 +26,12 @@ class MobileCodeScreen extends StatelessWidget {
               InkWell(
                 onTap: (){
                   Get.to(()=> MobileCodeDetailScreen(
+                    index: 0,
                     name: "Android",
                   ));
                 },
                 child: Container(
-                  height: 70.h,
+                  height: 70,
                   margin: EdgeInsets.symmetric(vertical: 5.w),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -39,8 +40,11 @@ class MobileCodeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Image.asset('assets/images/android_logo.png',width: 80.w,height: 70.h,),
-                      SizedBox(width: 10.h,),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 5),
+                        child: Image.asset('assets/images/android_logo.png',width: 80.w,fit: BoxFit.cover,),
+                      ),
+                      SizedBox(width: 10.w,),
                       Text('Secret key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
                     ],
                   ),
@@ -51,6 +55,7 @@ class MobileCodeScreen extends StatelessWidget {
                 onTap: (){
                   Get.to(()=> MobileCodeDetailScreen(
                     name: "iOS",
+                    index: 1,
                   ));
                 },
                 child: Container(
@@ -64,7 +69,7 @@ class MobileCodeScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
 
-                      Image.asset('assets/images/ios_logo.png',width: 100.w,height: 80.h,),
+                      Image.asset('assets/images/ios_logo.png',width: 80.w,fit: BoxFit.cover),
                       SizedBox(width: 10.h,),
                       Text('Secret key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
                     ],

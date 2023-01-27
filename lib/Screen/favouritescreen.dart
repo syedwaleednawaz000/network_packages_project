@@ -172,7 +172,7 @@ class FavouriteScreen extends StatelessWidget {
                                           AppConstant.flutterToast();
                                           print('copied');
                                         });
-                                      }, child: Icon(Icons.copy))
+                                      }, child: const Icon(Icons.copy))
                                 ],
                               )
                             ],

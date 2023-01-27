@@ -2,6 +2,8 @@
 class Assets {
   Assets._();
 
+  static const String MobidelCodeJsonAndroidsecretjson = 'assets/Json/MobidelCodeJson/androidsecretjson.dart';
+  static const String MobidelCodeJsonIossecretjson = 'assets/Json/MobidelCodeJson/iossecretjson.dart';
   static const String imagesAndroidLogo = 'assets/images/android_logo.png';
   static const String imagesIosLogo = 'assets/images/ios_logo.png';
   static const String imagesJazzLogo = 'assets/images/jazz_logo.png';
