@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:network_packages_project/Screen/mobielcodedetailscreen.dart';
 
 import '../Utils/appcolors.dart';
 
@@ -21,25 +23,39 @@ class MobileCodeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                height: 70.h,
-                margin: EdgeInsets.symmetric(vertical: 5.w),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white),
-                child: const Center(
-                  child: Text("Android"),
+              InkWell(
+                onTap: (){
+                  Get.to(()=> MobileCodeDetailScreen(
+                    name: "Android",
+                  ));
+                },
+                child: Container(
+                  height: 70.h,
+                  margin: EdgeInsets.symmetric(vertical: 5.w),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white),
+                  child: const Center(
+                    child: Text("Android"),
+                  ),
                 ),
               ),
               SizedBox(height: 10.h,),
-              Container(
-                height: 70.h,
-                margin: EdgeInsets.symmetric(vertical: 5.w),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white),
-                child: const Center(
-                  child: Text("iOS"),
+              InkWell(
+                onTap: (){
+                  Get.to(()=> MobileCodeDetailScreen(
+                    name: "iOS",
+                  ));
+                },
+                child: Container(
+                  height: 70.h,
+                  margin: EdgeInsets.symmetric(vertical: 5.w),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white),
+                  child: const Center(
+                    child: Text("iOS"),
+                  ),
                 ),
               )
             ],
