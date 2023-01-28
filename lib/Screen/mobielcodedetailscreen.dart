@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:clipboard/clipboard.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,8 +30,8 @@ class MobileCodeDetailScreen extends StatelessWidget {
               index == 0 ?              FutureBuilder(
                   future: DefaultAssetBundle.of(context).loadString("assets/Json/MobidelCodeJson/androidsecretjson.json"),
                   builder: (context, snapshot) {
-                    var mydata = json.decode(snapshot.data.toString());
-                    if (mydata == null) {
+                    var myData = json.decode(snapshot.data.toString());
+                    if (myData == null) {
                       return const Center(
                         child: Text(
                           "Loading...",
@@ -45,7 +46,7 @@ class MobileCodeDetailScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ListView.builder(
-                                  itemCount: mydata.length,
+                                  itemCount: myData.length,
                                   shrinkWrap: true,
                                   physics: NeverScrollableScrollPhysics(),
                                   itemBuilder: (context, index) {
@@ -62,28 +63,14 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
+                                            const SizedBox(height: 10,),
                                             Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
-                                                Text('Name',
-                                                    style: TextStyle(
-                                                        fontSize: 15,
-                                                        fontWeight: FontWeight.bold)),
-                                                Text('Code',
-                                                    style: TextStyle(
-                                                        fontSize: 15,
-                                                        fontWeight: FontWeight.bold)),
-
-                                              ],
-                                            ),
-                                            SizedBox(height: 10,),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Container(
+                                                SizedBox(
                                                   // color: Colors.yellow,
                                                   width: MediaQuery.of(context).size.width*0.38,
-                                                  child: Text(mydata[index]['name'],overflow: TextOverflow.ellipsis,style: const TextStyle(
+                                                  child: Text(myData[index]['name'],overflow: TextOverflow.ellipsis,style: const TextStyle(
                                                       fontSize: 15,
                                                       fontWeight: FontWeight.bold)),
                                                 ),
@@ -93,7 +80,7 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                                   width: MediaQuery.of(context).size.width*0.38,
                                                   child: Align(
                                                     alignment: Alignment.topRight,
-                                                    child: Text(mydata[index]['code'],overflow: TextOverflow.ellipsis,style: const TextStyle(
+                                                    child: Text(myData[index]['code'],overflow: TextOverflow.ellipsis,style: const TextStyle(
                                                         fontSize: 15,
                                                         fontWeight: FontWeight.bold)),
                                                   ),
@@ -108,16 +95,23 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                               children: [
                                                 GestureDetector(
                                                     onTap: () {
-                                                      ShareText();
+                                                      shareText();
                                                     },
-                                                    child: Icon(Icons.share_outlined)),
+                                                    child: const Icon(Icons.share_outlined)),
                                                 GestureDetector(
                                                     onTap: () {
-                                                      _callNumber(number: '232');
+                                                      callNumber(number: myData[index]['code']);
                                                     },
                                                     child: const Icon(Icons.dialer_sip_outlined)),
                                                 GestureDetector(
-                                                    onTap: () {}, child: Icon(Icons.copy))
+                                                    onTap: () {
+                                                      FlutterClipboard.copy(myData[index]['code']).then(( value ) {
+                                                        AppConstant.flutterToast();
+                                                        if (kDebugMode) {
+                                                          print('copied');
+                                                        }
+                                                      });
+                                                    }, child: const Icon(Icons.copy))
                                               ],
                                             )
                                           ],
@@ -131,8 +125,8 @@ class MobileCodeDetailScreen extends StatelessWidget {
                   }):               FutureBuilder(
                   future: DefaultAssetBundle.of(context).loadString("assets/Json/MobidelCodeJson/iossecretjson.json"),
                   builder: (context, snapshot) {
-                    var mydata = json.decode(snapshot.data.toString());
-                    if (mydata == null) {
+                    var myData = json.decode(snapshot.data.toString());
+                    if (myData == null) {
                       return const Center(
                         child: Text(
                           "Loading...",
@@ -147,9 +141,9 @@ class MobileCodeDetailScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ListView.builder(
-                                  itemCount: mydata.length,
+                                  itemCount: myData.length,
                                   shrinkWrap: true,
-                                  physics: NeverScrollableScrollPhysics(),
+                                  physics: const NeverScrollableScrollPhysics(),
                                   itemBuilder: (context, index) {
                                     return Padding(
                                       padding: const EdgeInsets.all(8.0),
@@ -178,24 +172,24 @@ class MobileCodeDetailScreen extends StatelessWidget {
 
                                               ],
                                             ),
-                                            SizedBox(height: 10,),
+                                            const SizedBox(height: 10,),
                                             Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
-                                                Container(
+                                                SizedBox(
                                                   // color: Colors.yellow,
                                                   width: MediaQuery.of(context).size.width*0.38,
-                                                  child: Text(mydata[index]['name'],overflow: TextOverflow.ellipsis,style: const TextStyle(
+                                                  child: Text(myData[index]['name'],overflow: TextOverflow.ellipsis,style: const TextStyle(
                                                       fontSize: 15,
                                                       fontWeight: FontWeight.bold)),
                                                 ),
 
-                                                Container(
+                                                SizedBox(
                                                   // color: Colors.yellow,
                                                   width: MediaQuery.of(context).size.width*0.38,
                                                   child: Align(
                                                     alignment: Alignment.topRight,
-                                                    child: Text(mydata[index]['code'],overflow: TextOverflow.ellipsis,style: const TextStyle(
+                                                    child: Text(myData[index]['code'],overflow: TextOverflow.ellipsis,style: const TextStyle(
                                                         fontSize: 15,
                                                         fontWeight: FontWeight.bold)),
                                                   ),
@@ -210,19 +204,21 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                               children: [
                                                 GestureDetector(
                                                     onTap: () {
-                                                      ShareText();
+                                                      shareText();
                                                     },
                                                     child: const Icon(Icons.share_outlined)),
                                                 GestureDetector(
                                                     onTap: () {
-                                                      _callNumber(number: mydata[index]['code']);
+                                                      callNumber(number: myData[index]['code']);
                                                     },
                                                     child: const Icon(Icons.dialer_sip_outlined)),
                                                 GestureDetector(
                                                     onTap: () {
-                                                      FlutterClipboard.copy(mydata[index]['code']).then(( value ) {
+                                                      FlutterClipboard.copy(myData[index]['code']).then(( value ) {
                                                         AppConstant.flutterToast();
-                                                        print('copied');
+                                                        if (kDebugMode) {
+                                                          print('copied');
+                                                        }
                                                       });
                                                     }, child: Icon(Icons.copy))
                                               ],
@@ -243,11 +239,11 @@ class MobileCodeDetailScreen extends StatelessWidget {
     );
   }
 
-  void ShareText() {
+  void shareText() {
     Share.share('this is the share Text');
   }
 
-  void _callNumber({required String number}) async {
+  void callNumber({required String number}) async {
     bool? res = await FlutterPhoneDirectCaller.callNumber(number);
   }
 }

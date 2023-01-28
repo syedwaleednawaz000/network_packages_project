@@ -18,15 +18,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
         title: "Notification",),
       backgroundColor: AppColors.backgroundBlackColor,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             ListView.builder(
                 itemCount: 5,
                 shrinkWrap: true,
                 itemBuilder: (context,index){
-              return  Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 8),
+              return  const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 8),
                 child: Card(
                   child: ListTile(
                     leading: Icon(Icons.notifications,color: Colors.blue,),

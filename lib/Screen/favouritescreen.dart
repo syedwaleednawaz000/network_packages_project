@@ -1,4 +1,5 @@
 import 'package:clipboard/clipboard.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -88,7 +89,7 @@ class FavouriteScreen extends StatelessWidget {
                                   ),
 
                                   Text(NameList[index]),
-                                  Icon(Icons.favorite,color: Colors.pinkAccent,),
+                                  const Icon(Icons.favorite,color: Colors.pinkAccent,),
                                 ],
                               ),
                               Row(
@@ -139,7 +140,7 @@ class FavouriteScreen extends StatelessWidget {
                                 children:  [
                                   Text(
                                     'Activation Code: ${codeNumber[index]}',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -165,12 +166,14 @@ class FavouriteScreen extends StatelessWidget {
                                       onTap: () {
                                         _callNumber(number: '232');
                                       },
-                                      child: Icon(Icons.dialer_sip_outlined)),
+                                      child: const Icon(Icons.dialer_sip_outlined)),
                                   GestureDetector(
                                       onTap: () {
                                         FlutterClipboard.copy(codeNumber[index]).then(( value ) {
                                           AppConstant.flutterToast();
-                                          print('copied');
+                                          if (kDebugMode) {
+                                            print('copied');
+                                          }
                                         });
                                       }, child: const Icon(Icons.copy))
                                 ],

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:clipboard/clipboard.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -84,7 +85,7 @@ class PackageDetailsScreen extends StatelessWidget {
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children:  const [
                                 Text('MB 1000',
                                     style: TextStyle(
                                         fontSize: 15,
@@ -104,7 +105,7 @@ class PackageDetailsScreen extends StatelessWidget {
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 Text(
                                   'Activation Code: 2123',
                                   style: TextStyle(
@@ -127,19 +128,21 @@ class PackageDetailsScreen extends StatelessWidget {
                                     onTap: () {
                                       ShareText();
                                     },
-                                    child: Icon(Icons.share_outlined)),
+                                    child: const Icon(Icons.share_outlined)),
                                 GestureDetector(
                                     onTap: () {
                                       _callNumber(number: '232');
                                     },
-                                    child: Icon(Icons.dialer_sip_outlined)),
+                                    child: const Icon(Icons.dialer_sip_outlined)),
                                 GestureDetector(
                                     onTap: () {
                                       FlutterClipboard.copy("just for test").then(( value ) {
                                         AppConstant.flutterToast();
-                                        print('copied');
+                                        if (kDebugMode) {
+                                          print('copied');
+                                        }
                                       });
-                                    }, child: Icon(Icons.copy))
+                                    }, child: const Icon(Icons.copy))
                               ],
                             )
                           ],

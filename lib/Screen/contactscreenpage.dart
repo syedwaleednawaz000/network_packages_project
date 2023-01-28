@@ -25,8 +25,8 @@ class _ContactScreenPageState extends State<ContactScreenPage> {
               ListView.builder(
                   itemCount: 3,
                   shrinkWrap: true,
-                  itemBuilder: (context,index){
-                return   Card(
+                  itemBuilder: (context,index) {
+                return   const Card(
                   child: ListTile(
                     leading: Icon(Icons.camera_alt),
                     title: Text('My Name '),
@@ -34,9 +34,9 @@ class _ContactScreenPageState extends State<ContactScreenPage> {
                   ),
                 );
               }),
-              SizedBox(height: 10,),
-              Text('Please Fill the below Information',style: TextStyle(color: Colors.white,fontSize:25,fontWeight: FontWeight.bold),),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
+              const Text('Please Fill the below Information',style: TextStyle(color: Colors.white,fontSize:25,fontWeight: FontWeight.bold),),
+              const SizedBox(height: 10,),
               const Card(
                 child: TextField(
                   decoration: InputDecoration(
@@ -45,7 +45,7 @@ class _ContactScreenPageState extends State<ContactScreenPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               const Card(
                 child: TextField(
                   decoration: InputDecoration(
@@ -55,7 +55,7 @@ class _ContactScreenPageState extends State<ContactScreenPage> {
 
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               const Card(
                 child: TextField(
                   decoration: InputDecoration(
@@ -64,7 +64,7 @@ class _ContactScreenPageState extends State<ContactScreenPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               const Card(
                 child: TextField(
                   decoration: InputDecoration(

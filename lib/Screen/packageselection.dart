@@ -30,13 +30,13 @@ class PackageSelectionScreen extends StatelessWidget {
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 ListView.builder(
                     itemCount: nameList.length,
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                   return InkWell(
                     onTap: (){
@@ -53,7 +53,7 @@ class PackageSelectionScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.white),
-                        child: Container(
+                        child: SizedBox(
                           height: 70,
                           // width: 350,
                           child: Row(

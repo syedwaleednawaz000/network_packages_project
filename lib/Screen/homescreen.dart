@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                 ListView.builder(
                     itemCount: imageList.length,
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                   return InkWell(
                     onTap: (){

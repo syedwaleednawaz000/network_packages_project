@@ -51,7 +51,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       }),
                 ],
               ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
 
                GestureDetector(
                  onTap: (){
@@ -64,27 +64,27 @@ class _AboutScreenState extends State<AboutScreen> {
                         fontWeight: FontWeight.bold,
                         fontSize: 20)),
                ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               GestureDetector(
                 onTap: (){
                   Get.to(ContactScreenPage());
                 },
-                child: Text("Contact us",
+                child: const Text("Contact us",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 20)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               GestureDetector(
                 onTap: (){
                   Get.to(ComplainentScreenPage());
                 },
-                child: Text("complaint",
+                child: const Text("complaint",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
