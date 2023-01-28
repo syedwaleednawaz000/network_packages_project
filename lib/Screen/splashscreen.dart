@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:network_packages_project/Screen/bottomnaviagtionscreen.dart';
 import 'package:network_packages_project/Utils/appimages.dart';
 
+import '../Utils/appcolors.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,20 +26,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: AppColors.backgroundBlackColor,
+      backgroundColor: AppColors.backgroundBlackColor,
       body: SafeArea(
         child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(AppImages.splashLogo,),fit: BoxFit.cover
-            )
+          decoration: const BoxDecoration(
+            // image: DecorationImage(
+            //   image: AssetImage(AppImages.splashLogo,),fit: BoxFit.cover
+            // )
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
-              // Center(child: Text(("Splash"))),
+              Center(child: Text(("Welcome to My App"))),
             ],
           ),
         ),

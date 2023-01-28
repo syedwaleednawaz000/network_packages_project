@@ -107,12 +107,30 @@ class PackageDetailsScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: const [
                                 Text(
-                                  'Activation Code: 2123',
+                                  'Activation Code:',
                                   style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                Text('Deactivation Code: 2143',
+                                Text('Deactivation Code:',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold)),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 7.h,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text(
+                                  '08943',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text('23534',
                                     style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold)),

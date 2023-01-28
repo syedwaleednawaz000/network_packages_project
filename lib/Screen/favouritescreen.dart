@@ -137,20 +137,38 @@ class FavouriteScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children:  [
+                                children:  const [
                                   Text(
-                                    'Activation Code: ${codeNumber[index]}',
-                                    style: const TextStyle(
+                                    'Activation Code:',
+                                    style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const Text('Deactivation Code: 2143',
+                                  Text('Deactivation Code:',
                                       style: TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold)),
                                 ],
                               ),
                               SizedBox(
+                                height: 7.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                                children:  [
+                                  Text(
+                                    '${codeNumber[index]}',
+                                    style: const TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  const Text('2143',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold)),
+                                ],
+                              ),SizedBox(
                                 height: 7.h,
                               ),
                               Row(
