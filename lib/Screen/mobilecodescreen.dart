@@ -27,6 +27,7 @@ class MobileCodeScreen extends StatelessWidget {
                 onTap: (){
                   Get.to(()=> MobileCodeDetailScreen(
                     index: 0,
+                    image: 'assets/images/android_logo.png',
                     name: "Android",
                   ));
                 },
@@ -56,6 +57,7 @@ class MobileCodeScreen extends StatelessWidget {
                   Get.to(()=> MobileCodeDetailScreen(
                     name: "iOS",
                     index: 1,
+                    image: 'assets/images/ios_logo.png',
                   ));
                 },
                 child: Container(
