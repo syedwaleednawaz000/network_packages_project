@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:network_packages_project/Screen/bottomnaviagtionscreen.dart';
 import 'package:network_packages_project/Utils/appimages.dart';
 
-import '../Utils/appcolors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
