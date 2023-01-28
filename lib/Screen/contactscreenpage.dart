@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
 
+import '../Utils/appcontant.dart';
 import '../Widget/appbarwidgetsecond.dart';
 class ContactScreenPage extends StatefulWidget {
   const ContactScreenPage({Key? key}) : super(key: key);
@@ -10,6 +14,10 @@ class ContactScreenPage extends StatefulWidget {
 }
 
 class _ContactScreenPageState extends State<ContactScreenPage> {
+  TextEditingController nameTextEditingController = TextEditingController();
+  TextEditingController emailEditingController = TextEditingController();
+  TextEditingController phoneEditingController = TextEditingController();
+  TextEditingController messageEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,62 +26,87 @@ class _ContactScreenPageState extends State<ContactScreenPage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Column(
-            children: [
-
-              ListView.builder(
-                  itemCount: 3,
-                  shrinkWrap: true,
-                  itemBuilder: (context,index) {
-                return   const Card(
-                  child: ListTile(
-                    leading: Icon(Icons.camera_alt),
-                    title: Text('My Name '),
-                    subtitle: Text('i have dont software Engineering in 2021'),
-                  ),
-                );
-              }),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children:  [
+              const ListTile(
+                leading: Icon(Icons.person,color: Colors.white,),
+                title: Text('Syed Waleed Nawaz',style: TextStyle(color: Colors.white),),
+                subtitle: Text('Software Engineer',style: TextStyle(color: Colors.white)),
+              ),
               const SizedBox(height: 10,),
-              const Text('Please Fill the below Information',style: TextStyle(color: Colors.white,fontSize:25,fontWeight: FontWeight.bold),),
+              const Text('Fill the below Information',textAlign: TextAlign.start,style: TextStyle(color: Colors.white,fontSize:25,fontWeight: FontWeight.bold),),
               const SizedBox(height: 10,),
-              const Card(
+               Card(
                 child: TextField(
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left:60),
+                  controller: nameTextEditingController,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                    contentPadding: EdgeInsets.only(left: 10),
                     hintText: 'Enter Your Name'
                   ),
                 ),
               ),
               const SizedBox(height: 10,),
-              const Card(
+              Card(
                 child: TextField(
-                  decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(left:60),
+                  controller: emailEditingController,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(left: 10),
                       hintText: 'Enter Your Email'
                   ),
 
                 ),
               ),
-              const SizedBox(height: 10,),
-              const Card(
+              SizedBox(height: 10,),
+              Card(
                 child: TextField(
-                  decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(left:60),
+                  controller: phoneEditingController,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(left: 10),
                       hintText: 'Enter Your Phone'
                   ),
                 ),
               ),
               const SizedBox(height: 10,),
-              const Card(
+              Card(
                 child: TextField(
-                  decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(left:60),
+                  controller: messageEditingController,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                      contentPadding: EdgeInsets.only(left: 10),
                       hintText: 'Enter Your Massage'
                   ),
 
                 ),
               ),
+              const SizedBox(height: 10,),
+              Align(
+                alignment: Alignment.topRight,
+                child: ElevatedButton(
+                    onPressed: (){
+                      if(emailEditingController.text.toString().contains("@")){
+                        if(emailEditingController.text.length < 6){
+                          AppConstant.flutterToastError(message: "enter valid email");
+                        }else{
+                          if(nameTextEditingController.text.length < 10){
+                            AppConstant.flutterToastError(message: "complaint must be greater then 10 character");
+                          }else{
+                            AppConstant.flutterToastWithMessage(
+                              message: "Congratulation successfully submit your complaint",
+                            );
+                            Get.back();
+                          }
+                        }
+                      }else{
+                        AppConstant.flutterToastError(message: "Please enter valid email");
+                      }
+                    }, child: const Text('Submit',style: TextStyle(color: Colors.black),)),
+              )
+
             ],
           ),
         ),

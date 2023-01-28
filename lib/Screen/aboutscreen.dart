@@ -57,12 +57,15 @@ class _AboutScreenState extends State<AboutScreen> {
                  onTap: (){
                    Get.to(AboutScreenPage());
                  },
-                 child: const Text("About us",
+                 child: const SizedBox(
+                   width: double.infinity,
+                   child: Text("About us",
 
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20)),
+                 ),
                ),
               const SizedBox(
                 height: 30,
@@ -71,11 +74,14 @@ class _AboutScreenState extends State<AboutScreen> {
                 onTap: (){
                   Get.to(ContactScreenPage());
                 },
-                child: const Text("Contact us",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
+                child: const SizedBox(
+                  width: double.infinity,
+                  child: Text("Contact us",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20)),
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -84,11 +90,14 @@ class _AboutScreenState extends State<AboutScreen> {
                 onTap: (){
                   Get.to(ComplainentScreenPage());
                 },
-                child: const Text("complaint",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20)),
+                child: const SizedBox(
+                  width: double.infinity,
+                  child: Text("Complaint",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20)),
+                ),
               ),
             ],
           ),

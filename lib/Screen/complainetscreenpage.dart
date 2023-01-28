@@ -13,7 +13,7 @@ class ComplainentScreenPage extends StatefulWidget {
 }
 
 class _ComplainentScreenPageState extends State<ComplainentScreenPage> {
-  TextEditingController textEditingController = TextEditingController();
+  TextEditingController complaintTextEditingController = TextEditingController();
   TextEditingController emailEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -22,67 +22,69 @@ class _ComplainentScreenPageState extends State<ComplainentScreenPage> {
       appBar: AppBarWidgetSecond(title: 'Complainent'),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:   [
-             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
-              child: Card(
-                child: SizedBox(
-                  width: double.infinity,
-                  child: TextField(
-                    controller: emailEditingController,
-                    decoration: const InputDecoration(
-                      focusColor: Colors.blue,
-                      hintText: 'Enter Email or Phone Number',
-                      fillColor: Colors.white
-                    ),
-                  ),
-                ),
-              ),
-            ),
-             Card(
-               child: Container(
-                 width:300.w ,
-                 height: 150.h,
-                 child:  TextField(
-                   controller: textEditingController,
-                   minLines: 1,
-                   maxLines: null,
-                   // expands: true,
-                   decoration: const InputDecoration(
-                     enabledBorder: InputBorder.none,
-                     focusedBorder: InputBorder.none,
-                     hintText: "Enter Your Massage"
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0,),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:   [
+              SizedBox(height: 15.h,),
+               Card(
+                 child: SizedBox(
+                   width: double.infinity,
+                   child: TextField(
+                     controller: emailEditingController,
+                     decoration:  InputDecoration(
+                       contentPadding: EdgeInsets.only(left: 10.w),
+                       focusColor: Colors.blue,
+                       hintText: 'Enter Email or Phone Number',
+                       fillColor: Colors.white
+                     ),
                    ),
                  ),
                ),
-             ),
-
-            Padding(
-              padding: const EdgeInsets.only(left: 220),
-              child: ElevatedButton(onPressed: (){
-                if(emailEditingController.text.toString().contains("@")){
-                if(emailEditingController.text.length < 6){
-                  AppConstant.flutterToastError(message: "enter valid email");
-                }else{
-                  if(textEditingController.text.length < 10){
-                    AppConstant.flutterToastError(message: "complaint must be greater then 10 character");
+               Card(
+                 child: SizedBox(
+                   width: double.infinity,
+                   height: 150.h,
+                   child:  TextField(
+                     controller: complaintTextEditingController,
+                     minLines: 1,
+                     maxLines: null,
+                     // expands: true,
+                     decoration:  InputDecoration(
+                         contentPadding: EdgeInsets.only(left: 10.w),
+                       enabledBorder: InputBorder.none,
+                       focusedBorder: InputBorder.none,
+                       hintText: "Enter Your Massage"
+                     ),
+                   ),
+                 ),
+               ),
+              SizedBox(height: 10.h,),
+              Align(
+                alignment: Alignment.topRight,
+                child: ElevatedButton(
+                    onPressed: (){
+                  if(emailEditingController.text.toString().contains("@")){
+                  if(emailEditingController.text.length < 6){
+                    AppConstant.flutterToastError(message: "enter valid email");
                   }else{
-                    AppConstant.flutterToastWithMessage(
-                      message: "Congratulation successfully submit your complaint",
-                    );
-                    Get.back();
+                    if(complaintTextEditingController.text.length < 10){
+                      AppConstant.flutterToastError(message: "complaint must be greater then 10 character");
+                    }else{
+                      AppConstant.flutterToastWithMessage(
+                        message: "Congratulation successfully submit your complaint",
+                      );
+                      Get.back();
+                    }
                   }
-                }
-                }else{
-                  AppConstant.flutterToastError(message: "Please enter valid email");
-                }
-              }, child: const Text('Submit',style: TextStyle(color: Colors.white),)),
-            )
-          ],
+                  }else{
+                    AppConstant.flutterToastError(message: "Please enter valid email");
+                  }
+                }, child: const Text('Submit',style: TextStyle(color: Colors.black),)),
+              )
+            ],
+          ),
         ),
       ),
     );

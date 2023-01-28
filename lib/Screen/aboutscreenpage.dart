@@ -18,13 +18,13 @@ class _AboutScreenPageState extends State<AboutScreenPage> {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [
-                const SizedBox(height: 20,),
-                Center(child: Image.asset('assets/images/android_logo.png',color: Colors.white,width: 100,height: 100,)),
+                const SizedBox(height: 10,),
+                Center(child: Image.asset('assets/images/android_logo.png',fit: BoxFit.cover,color: Colors.white,height: 100,)),
                 SizedBox(height: 10,),
                 const Text('A software engineer is a person who applies the principles '
                     'of software engineering to design, develop, maintain, test, and '

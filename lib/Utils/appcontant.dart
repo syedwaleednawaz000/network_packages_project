@@ -30,7 +30,7 @@ class AppConstant{
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
       // webPosition: "right",
-      backgroundColor: Colors.red,
+      backgroundColor: AppColors.backgroundBlackColor,
       textColor: Colors.white,
       fontSize: 16.0
   );
