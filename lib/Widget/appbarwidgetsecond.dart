@@ -17,8 +17,8 @@ class AppBarWidgetSecond extends StatelessWidget
       centerTitle: true,
       backgroundColor: AppColors.backgroundBlackColor,
       title: Container(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text(title.toString())),
+          padding:  EdgeInsets.only(left: 10),
+          child: Text(title.toString(),style: TextStyle(color: Colors.white),)),
       elevation: 0,
       automaticallyImplyLeading: false,
     );

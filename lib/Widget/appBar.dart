@@ -15,11 +15,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: AppColors.backgroundBlackColor,
       title:  Container(
           padding: const EdgeInsets.only(left: 10),
-          child:  Text(title.toString())),
+          child:  Text(title.toString(),style: TextStyle(color: Colors.white),)),
       elevation: 0,
       automaticallyImplyLeading: false,
       actions:  [
-        const Icon(Icons.notification_important_outlined),
+        const Icon(Icons.notification_important_outlined,color: Colors.white,),
         SizedBox(width: 22.w)
       ],
 

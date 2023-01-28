@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:network_packages_project/Screen/bottomnaviagtionscreen.dart';
 import 'package:network_packages_project/Utils/appimages.dart';
 
@@ -15,8 +16,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  DateTime now = DateTime.now();
+  String formattedDate = '';
   @override
   void initState() {
+    formattedDate = DateFormat('dd-MM-yyyy').format(now);
+    // formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(now);
     Timer(const Duration(seconds: 2), (){
       Get.to(()=> const DashBoardScreen());
     });
@@ -38,8 +43,9 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Center(child: Text(("Welcome to My App"))),
+            children:  [
+              const Center(child: Text(("All packages Updated to"),style: TextStyle(color: Colors.white),)),
+              Center(child: Text(("${formattedDate.toString()}"),style: const TextStyle(color: Colors.white),)),
             ],
           ),
         ),
