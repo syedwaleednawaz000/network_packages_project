@@ -58,7 +58,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.favorite_border_sharp,
+                  Icons.favorite,
                 ),
                 // tooltip: "fav",
                 label: 'Favourite',
@@ -67,7 +67,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                 icon: Icon(
                   Icons.qr_code,
                 ),
-                label: 'Mobile Code',
+                label: 'Hidden Key',
               ),
               BottomNavigationBarItem(
                 icon: Icon(

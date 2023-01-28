@@ -42,10 +42,10 @@ class MobileCodeScreen extends StatelessWidget {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 5),
-                        child: Image.asset('assets/images/android_logo.png',width: 80.w,fit: BoxFit.cover,),
+                        child: Image.asset('assets/images/android_logo.png',width: 80.w,),
                       ),
                       SizedBox(width: 10.w,),
-                      Text('Secret key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
+                      Text('Hidden key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
                     ],
                   ),
                 ),
@@ -69,9 +69,9 @@ class MobileCodeScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
 
-                      Image.asset('assets/images/ios_logo.png',width: 80.w,fit: BoxFit.cover),
+                      Image.asset('assets/images/ios_logo.png',width: 80.w),
                       SizedBox(width: 10.h,),
-                      Text('Secret key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
+                      Text('Hidden key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
                     ],
                   ),
                 ),

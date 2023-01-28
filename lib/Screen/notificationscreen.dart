@@ -26,7 +26,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 shrinkWrap: true,
                 itemBuilder: (context,index){
               return  const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 8),
+                padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 3),
                 child: Card(
                   child: ListTile(
                     leading: Icon(Icons.notifications,color: Colors.blue,),
