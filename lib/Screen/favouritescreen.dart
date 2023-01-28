@@ -137,16 +137,16 @@ class FavouriteScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children:  const [
+                                children:   [
                                   Text(
                                     'Activation Code:',
                                     style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 15.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text('Deactivation Code:',
                                       style: TextStyle(
-                                          fontSize: 15,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.bold)),
                                 ],
                               ),
@@ -159,13 +159,13 @@ class FavouriteScreen extends StatelessWidget {
                                 children:  [
                                   Text(
                                     '${codeNumber[index]}',
-                                    style: const TextStyle(
-                                        fontSize: 15,
+                                    style:  TextStyle(
+                                        fontSize: 15.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const Text('2143',
+                                   Text('2143',
                                       style: TextStyle(
-                                          fontSize: 15,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.bold)),
                                 ],
                               ),SizedBox(
@@ -177,7 +177,7 @@ class FavouriteScreen extends StatelessWidget {
                                 children: [
                                   GestureDetector(
                                       onTap: () {
-                                        ShareText();
+                                        shareText();
                                       },
                                       child: const Icon(Icons.share_outlined)),
                                   GestureDetector(
@@ -259,7 +259,7 @@ class FavouriteScreen extends StatelessWidget {
     );
   }
 
-  void ShareText() {
+  void shareText() {
     Share.share('this is the favarite shere screen');
   }
 
