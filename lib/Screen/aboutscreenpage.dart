@@ -19,13 +19,21 @@ class _AboutScreenPageState extends State<AboutScreenPage> {
         physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              const SizedBox(height: 20,),
-              Center(child: Image.asset('assets/images/android_logo.png',width: 100,height: 100,)),
-              const Text('A software engineer is a person who applies the principles of software engineering to design, develop, maintain, test, and evaluate computer software. The term programmer is sometimes used as a synonym,'
-                  ' but may also lack connotations of engineering education or skills.',style: TextStyle(color: Colors.white),)
-            ],
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                const SizedBox(height: 20,),
+                Center(child: Image.asset('assets/images/android_logo.png',color: Colors.white,width: 100,height: 100,)),
+                SizedBox(height: 10,),
+                const Text('A software engineer is a person who applies the principles '
+                    'of software engineering to design, develop, maintain, test, and '
+                    'evaluate computer software. The term programmer is sometimes used '
+                    'as a synonym, but may also lack connotations of engineering education '
+                    'or skills.',textAlign: TextAlign.justify,
+                  style: TextStyle(color: Colors.white),)
+              ],
+            ),
           ),
         ),
       ),

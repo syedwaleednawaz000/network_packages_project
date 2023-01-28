@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
+
+import '../Screen/notificationscreen.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
    AppBarWidget({Key? key,required  this.title}) : super(key: key);
@@ -19,7 +22,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       automaticallyImplyLeading: false,
       actions:  [
-        const Icon(Icons.notification_important_outlined,color: Colors.white,),
+        InkWell(
+            onTap: (){
+              Get.to(()=> NotificationScreen());
+            },
+            child: const Icon(Icons.notification_important_outlined,color: Colors.white,)),
         SizedBox(width: 22.w)
       ],
 

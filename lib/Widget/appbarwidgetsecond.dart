@@ -14,11 +14,11 @@ class AppBarWidgetSecond extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: true,
+      // centerTitle: true,
       backgroundColor: AppColors.backgroundBlackColor,
       title: Container(
-          padding:  EdgeInsets.only(left: 10),
-          child: Text(title.toString(),style: TextStyle(color: Colors.white),)),
+          padding:  const EdgeInsets.only(left: 10),
+          child: Text(title.toString(),style: const TextStyle(color: Colors.white),)),
       elevation: 0,
       automaticallyImplyLeading: false,
     );
