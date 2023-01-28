@@ -51,7 +51,7 @@ class _ComplainentScreenPageState extends State<ComplainentScreenPage> {
                    controller: textEditingController,
                    minLines: 1,
                    maxLines: null,
-                   expands: true,
+                   // expands: true,
                    decoration: const InputDecoration(
                      enabledBorder: InputBorder.none,
                      focusedBorder: InputBorder.none,
