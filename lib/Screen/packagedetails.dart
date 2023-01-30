@@ -60,12 +60,19 @@ class PackageDetailsScreen extends StatelessWidget {
                                 Text(
                                   NameList[0],
                                 ),
-                                Icon(Icons.favorite,color: Colors.pinkAccent,),
+                                InkWell(
+                                    onTap: () {
+                                      // hive add code here
+                                    },
+                                    child: const Icon(
+                                      Icons.favorite_outline,
+                                      color: Colors.black,
+                                    )),
                               ],
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const[
+                              children: const [
                                 Text('Rs 120',
                                     style: TextStyle(
                                         fontSize: 15,
@@ -85,7 +92,7 @@ class PackageDetailsScreen extends StatelessWidget {
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children:  const [
+                              children: const [
                                 Text('MB 1000',
                                     style: TextStyle(
                                         fontSize: 15,
@@ -151,16 +158,19 @@ class PackageDetailsScreen extends StatelessWidget {
                                     onTap: () {
                                       _callNumber(number: '232');
                                     },
-                                    child: const Icon(Icons.dialer_sip_outlined)),
+                                    child:
+                                        const Icon(Icons.dialer_sip_outlined)),
                                 GestureDetector(
                                     onTap: () {
-                                      FlutterClipboard.copy("just for test").then(( value ) {
+                                      FlutterClipboard.copy("just for test")
+                                          .then((value) {
                                         AppConstant.flutterToast();
                                         if (kDebugMode) {
                                           print('copied');
                                         }
                                       });
-                                    }, child: const Icon(Icons.copy))
+                                    },
+                                    child: const Icon(Icons.copy))
                               ],
                             )
                           ],

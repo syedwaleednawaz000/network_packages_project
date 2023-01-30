@@ -107,7 +107,7 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                               children: [
                                                 GestureDetector(
                                                     onTap: () {
-                                                      shareText();
+                                                      shareText(shareText: myData[index]['code']);
                                                     },
                                                     child: const Icon(Icons.share_outlined)),
                                                 GestureDetector(
@@ -142,8 +142,8 @@ class MobileCodeDetailScreen extends StatelessWidget {
     );
   }
 
-  void shareText() {
-    Share.share('this is the share Text');
+  void shareText({required String shareText}) {
+    Share.share(shareText);
   }
 
   void callNumber({required String number}) async {

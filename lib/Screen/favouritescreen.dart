@@ -23,7 +23,7 @@ class FavouriteScreen extends StatelessWidget {
     AppImages.ptclLogo,
     AppImages.nayatelLogo
   ];
-  List<String> codeNumber =[
+  List<String> codeNumber = [
     "123",
     "234",
     "345",
@@ -40,9 +40,7 @@ class FavouriteScreen extends StatelessWidget {
     "nayate"
   ];
 
-  List<String> faveIcons=[
-
-  ];
+  List<String> faveIcons = [];
   Imgcontroller _imgcontroller = Get.put(Imgcontroller());
 
   @override
@@ -57,7 +55,6 @@ class FavouriteScreen extends StatelessWidget {
             child: Column(
               children: [
                 Text(("Favourtie")),
-
                 ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
@@ -66,7 +63,6 @@ class FavouriteScreen extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-
                           // height: 150.h,
                           padding: EdgeInsets.only(
                               left: 15.w, right: 15.w, top: 10.h, bottom: 10.h),
@@ -87,15 +83,21 @@ class FavouriteScreen extends StatelessWidget {
                                     width: 50,
                                     height: 50,
                                   ),
-
                                   Text(NameList[index]),
-                                  const Icon(Icons.favorite,color: Colors.pinkAccent,),
+                                  InkWell(
+                                      onTap: () {
+                                        // hive remove code here
+                                      },
+                                      child: const Icon(
+                                        Icons.favorite,
+                                        color: Colors.pinkAccent,
+                                      )),
                                 ],
                               ),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const[
+                                children: const [
                                   Text('Rs 120',
                                       style: TextStyle(
                                           fontSize: 15,
@@ -137,7 +139,7 @@ class FavouriteScreen extends StatelessWidget {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children:   [
+                                children: [
                                   Text(
                                     'Activation Code:',
                                     style: TextStyle(
@@ -155,20 +157,21 @@ class FavouriteScreen extends StatelessWidget {
                               ),
                               Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                children:  [
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
                                   Text(
                                     '${codeNumber[index]}',
-                                    style:  TextStyle(
+                                    style: TextStyle(
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                   Text('2143',
+                                  Text('2143',
                                       style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold)),
                                 ],
-                              ),SizedBox(
+                              ),
+                              SizedBox(
                                 height: 7.h,
                               ),
                               Row(
@@ -184,16 +187,19 @@ class FavouriteScreen extends StatelessWidget {
                                       onTap: () {
                                         _callNumber(number: '232');
                                       },
-                                      child: const Icon(Icons.dialer_sip_outlined)),
+                                      child: const Icon(
+                                          Icons.dialer_sip_outlined)),
                                   GestureDetector(
                                       onTap: () {
-                                        FlutterClipboard.copy(codeNumber[index]).then(( value ) {
+                                        FlutterClipboard.copy(codeNumber[index])
+                                            .then((value) {
                                           AppConstant.flutterToast();
                                           if (kDebugMode) {
                                             print('copied');
                                           }
                                         });
-                                      }, child: const Icon(Icons.copy))
+                                      },
+                                      child: const Icon(Icons.copy))
                                 ],
                               )
                             ],
@@ -201,56 +207,6 @@ class FavouriteScreen extends StatelessWidget {
                         ),
                       );
                     }),
-
-                // ListView.builder(
-                //   shrinkWrap: true,
-                //     itemCount:_imgcontroller.getModelimgData.length,
-                //     itemBuilder: (context,index){
-                //   return Padding(
-                //     padding: const EdgeInsets.only(top: 16),
-                //     child: Container(
-                //       height: 90,
-                //       width: double.infinity,
-                //       // width: 300,
-                //       decoration: BoxDecoration(
-                //           borderRadius: BorderRadius.circular(10),
-                //           color: Colors.white),
-                //       child: Container(
-                //         height: 70,
-                //         // width: 350,
-                //         child: Row(
-                //           children: [
-                //             SizedBox(width: 20.w,),
-                //             Image.asset(_imgcontroller.getModelimgData[index].img.toString(),width: 80.w,height: 60.h,),
-                //             SizedBox(width: 30.w,),
-                //             Column(
-                //               mainAxisAlignment: MainAxisAlignment.start,
-                //               children: [
-                //                 SizedBox(height: 10.w,),
-                //                 Text(_imgcontroller.getModelimgData[index].Text.toString(),style: TextStyle(color: Colors.black),),
-                //                 SizedBox(height: 8.w,),
-                //                 Row(
-                //                   children: [
-                //                     Text(_imgcontroller.getModelimgData[index].text1.toString(),style: TextStyle(color: Colors.black),),
-                //                     SizedBox(width: 10.w,),
-                //                     Text(_imgcontroller.getModelimgData[index].text2.toString(),style: TextStyle(color: Colors.black),)
-                //                   ],
-                //                 ),
-                //
-                //
-                //               ],
-                //             ),
-                //             const Spacer(),
-                //             Padding(
-                //               padding:  EdgeInsets.only(bottom: 50.h,right: 10.w),
-                //               child: Icon(Icons.favorite,color: Colors.red,),
-                //             )
-                //           ],
-                //         ),
-                //       ),
-                //     ),
-                //   );
-                // }),
               ],
             ),
           ),
