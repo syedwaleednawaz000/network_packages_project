@@ -5,6 +5,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:hive/hive.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
 import 'package:network_packages_project/Utils/appcontant.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
@@ -28,13 +31,13 @@ class PackageDetailsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               ListView.builder(
                   itemCount: 4,
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -61,7 +64,25 @@ class PackageDetailsScreen extends StatelessWidget {
                                   NameList[0],
                                 ),
                                 InkWell(
-                                    onTap: () {
+                                    onTap: () async {
+                                      Get.snackbar(
+                                          "Added!!!", 'Added to favourite',
+                                          backgroundColor: Colors.deepPurple,
+                                          colorText: Colors.white);
+
+                                      var box = await Hive.openBox('details');
+                                      box.put('key', 'value');
+                                      box.put('details', {
+                                        'Rs': '120',
+                                        'OnNet Minutes': '200',
+                                        'Off Net Minutes': '20',
+                                        'Internet MB': '1000',
+                                        'SMS': '1200',
+                                        'Social MB': '2000',
+                                        'Activation Code': '*3457#',
+                                        'Deactivation Code': '*6347#',
+                                      });
+                                      print("data added");
                                       // hive add code here
                                     },
                                     child: const Icon(
@@ -151,7 +172,7 @@ class PackageDetailsScreen extends StatelessWidget {
                               children: [
                                 GestureDetector(
                                     onTap: () {
-                                      ShareText();
+                                      shareText();
                                     },
                                     child: const Icon(Icons.share_outlined)),
                                 GestureDetector(
@@ -185,11 +206,31 @@ class PackageDetailsScreen extends StatelessWidget {
     );
   }
 
-  void ShareText() {
+  void shareText() {
     Share.share('this is the share Text');
   }
 
   void _callNumber({required String number}) async {
     bool? res = await FlutterPhoneDirectCaller.callNumber(number);
   }
+  //
+  // saveData() async {
+  //   //  Get.back();
+  //
+  //   // final isValid = _formKey.currentState!.validate();
+  //
+  //   Hive.box<DetailsModel>('note').add(DetailsModel(
+  //       price: '',
+  //       onNetMints: '',
+  //       ofNetMints: '',
+  //       mb: '',
+  //       socialMB: '',
+  //       sMS: '',
+  //       activationCode: '',
+  //       deactivationCode: '',
+  //       shareImage: '',
+  //       sipCallImage: '',
+  //       copyImage: ''));
+  //   Get.snackbar('Saved!!', 'Data saved');
+  // }
 }

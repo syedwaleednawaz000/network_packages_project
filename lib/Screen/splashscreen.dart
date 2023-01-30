@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     formattedDate = DateFormat('dd-MM-yyyy').format(now);
     // formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(now);
     Timer(const Duration(seconds: 2), (){
-      Get.to(()=> const DashBoardScreen());
+      Get.offAll(()=> const DashBoardScreen());
     });
     // TODO: implement initState
     super.initState();
