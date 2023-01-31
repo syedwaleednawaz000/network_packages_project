@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hive/hive.dart';
+import 'package:network_packages_project/Model/details_model.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
 import 'package:network_packages_project/Utils/appcontant.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
@@ -64,26 +65,23 @@ class PackageDetailsScreen extends StatelessWidget {
                                   NameList[0],
                                 ),
                                 InkWell(
-                                    onTap: () async {
-                                      Get.snackbar(
-                                          "Added!!!", 'Added to favourite',
-                                          backgroundColor: Colors.deepPurple,
-                                          colorText: Colors.white);
-
-                                      var box = await Hive.openBox('details');
-                                      box.put('key', 'value');
-                                      box.put('details', {
-                                        'Rs': '120',
-                                        'OnNet Minutes': '200',
-                                        'Off Net Minutes': '20',
-                                        'Internet MB': '1000',
-                                        'SMS': '1200',
-                                        'Social MB': '2000',
-                                        'Activation Code': '*3457#',
-                                        'Deactivation Code': '*6347#',
-                                      });
-                                      print("data added");
-                                      // hive add code here
+                                    onTap: () {
+                                      // Adding to hive database using box
+                                      Hive.box<DetailsModel>('details').add(
+                                          DetailsModel(
+                                              price: '340',
+                                              onNetMints: '569',
+                                              ofNetMints: '234',
+                                              mb: '1024',
+                                              socialMB: '3490',
+                                              sMS: '10000',
+                                              activationCode: '*7548#',
+                                              deactivationCode: '*8374#',
+                                              shareImage: AppImages.jazzLogo,
+                                              sipCallImage: 'sip call',
+                                              copyImage: 'copy'));
+                                      AppConstant.flutterToastWithMessage(
+                                          message: "Successfully Added");
                                     },
                                     child: const Icon(
                                       Icons.favorite_outline,
@@ -213,24 +211,4 @@ class PackageDetailsScreen extends StatelessWidget {
   void _callNumber({required String number}) async {
     bool? res = await FlutterPhoneDirectCaller.callNumber(number);
   }
-  //
-  // saveData() async {
-  //   //  Get.back();
-  //
-  //   // final isValid = _formKey.currentState!.validate();
-  //
-  //   Hive.box<DetailsModel>('note').add(DetailsModel(
-  //       price: '',
-  //       onNetMints: '',
-  //       ofNetMints: '',
-  //       mb: '',
-  //       socialMB: '',
-  //       sMS: '',
-  //       activationCode: '',
-  //       deactivationCode: '',
-  //       shareImage: '',
-  //       sipCallImage: '',
-  //       copyImage: ''));
-  //   Get.snackbar('Saved!!', 'Data saved');
-  // }
 }

@@ -79,7 +79,6 @@ flutter:
     - assets/Json/NayaTelJson/
     - assets/Json/PTCLJson/
     - assets/Json/MobidelCodeJson/
-    - assets/Json/MobidelCodeJson/
     - assets/Json/TelenorJson/
     - assets/Json/UfoneJson/
     - assets/Json/WaridJson/

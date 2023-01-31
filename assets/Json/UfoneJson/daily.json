@@ -1,0 +1,109 @@
+[
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Best Morning Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"2GB (9am-12pm)",
+    "social_mb":"0",
+    "validity":"1",
+    "price":"7",
+    "activation_code": "*4200#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Daily Off Peak Plus",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"1.5 GB (6AM-6PM)",
+    "social_mb":"0",
+    "validity":"1",
+    "price":"13",
+    "activation_code": "*10#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Mega Internet",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"2 GB (12AM-12PM)",
+    "social_mb":"0",
+    "validity":"1",
+    "price":"20",
+    "activation_code": "*550#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Daily Light",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"40",
+    "social_mb":"1GB",
+    "validity":"1",
+    "price":"14",
+    "activation_code": "*2256#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Daily Whatsapp Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"0",
+    "social_mb":"100",
+    "validity":"1",
+    "price":"1.5",
+    "activation_code": "*987#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "SnapChat Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"100",
+    "social_mb":"0",
+    "validity":"1",
+    "price":"Free of cost",
+    "activation_code": "*7627#"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]

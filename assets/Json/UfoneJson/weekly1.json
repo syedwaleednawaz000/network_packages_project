@@ -1,0 +1,124 @@
+[
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Sab Se Bari Plus Offer",
+    "on_minutes": "5000",
+    "off_minute":"200",
+    "sms":"5000",
+    "mb":"2GB (9am-12pm)",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"350",
+    "activation_code": "*#"
+  },
+
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "SAB SE BARI OFFER",
+    "on_minutes": "5000",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"40GB",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"320",
+    "activation_code": "*7777#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "UPOWER INTERNET",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"16 GB (include 8GB from 2am to 2 pm)",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"260",
+    "activation_code": "*270#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "WEEKLY INTERNET PLUS",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"10 GB (include 8GB from 21am to  9am)",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"220",
+    "activation_code": "*260#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "SUPER INTERNET",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"1.5 GB",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"160",
+    "activation_code": "*220#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "YOUTUBE OFFER",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"5 GB (YouTube)",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"120",
+    "activation_code": "*5883#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "INTERNET MAX OFFER",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"25 GB (1am-9am)",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"90",
+    "activation_code": "*2570#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "UFONE TIKTOK OFFER",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"1.5 GB (TikTok)",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"70",
+    "activation_code": "*2345#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "WEEKLY SNACKVIDEO OFFER",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"2.5 GB (Snack Video)",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"70",
+    "activation_code": "*265#"
+  }
+]

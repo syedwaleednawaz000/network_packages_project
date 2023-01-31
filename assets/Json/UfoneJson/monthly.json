@@ -1,0 +1,126 @@
+[
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Monthly Heavy Internet",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"30GB (includes 15GB from 1am to 9am)",
+    "social_mb":"0",
+    "validity":"30",
+    "price":"730",
+    "activation_code": "*310#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "SUPER INTERNET PLUS",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"18GB (includes 9GB from 1am to 9am)",
+    "social_mb":"0",
+    "validity":"30",
+    "price":"549",
+    "activation_code": "*290#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "MONTHLY WHATSAPP OFFER",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"0",
+    "social_mb":"6GB",
+    "validity":"30",
+    "price":"60",
+    "activation_code": "*987#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Social Hero Offer",
+    "on_minutes": "300",
+    "off_minute":"50",
+    "sms":"300",
+    "mb":"0",
+    "social_mb":"12GB",
+    "validity":"30",
+    "price":"200",
+    "activation_code": "*4440#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "MONTHLY FACEBOOK OFFER",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"0",
+    "social_mb":"6GB",
+    "validity":"30",
+    "price":"100",
+    "activation_code": "*987#"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "SOCIAL MONTHLY",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"0",
+    "social_mb":"1GB",
+    "validity":"30",
+    "price":"100",
+    "activation_code": "*5858#"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Monthly FreeFire",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"10GB (FreeFire)",
+    "social_mb":"",
+    "validity":"30",
+    "price":"100",
+    "activation_code": "*#"
+  },
+
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Monthly PUBG",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"10GB (PUBG)",
+    "social_mb":"",
+    "validity":"30",
+    "price":"100",
+    "activation_code": "*#"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]

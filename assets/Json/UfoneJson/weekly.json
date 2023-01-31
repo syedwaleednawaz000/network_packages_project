@@ -1,0 +1,183 @@
+[
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Ufone TikTok Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"1500",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"50"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Ufone Weekly Pakistan Offer",
+    "on_minutes": "700",
+    "off_minute":"0",
+    "sms":"",
+    "mb":"100",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"100"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Ufone YouTube Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"5000",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"100"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "SUPER WEEKLY INTERNET",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"1.2 GB",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"100"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "WEEKLY LIGHT",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"2 GB + 250 MB",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"50"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "WEEKLY INTERNET PLUS",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"3 GB",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"150"
+  },
+
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "",
+    "on_minutes": "",
+    "off_minute":"",
+    "sms":"",
+    "mb":"",
+    "social_mb":"",
+    "validity":"",
+    "price":""
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Ufone weekl SMS Offery",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"1250",
+    "mb":"0",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"11.95"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Ufone Weekly Snack Video Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"1500",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"70"
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "Ufone Internet Max Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"25000",
+    "social_mb":"0",
+    "validity":"7",
+    "price":"90"
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "",
+    "on_minutes": "",
+    "off_minute":"",
+    "sms":"",
+    "mb":"",
+    "social_mb":"",
+    "validity":"7",
+    "price":""
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "",
+    "on_minutes": "",
+    "off_minute":"",
+    "sms":"",
+    "mb":"",
+    "social_mb":"",
+    "validity":"7",
+    "price":""
+  },
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "",
+    "on_minutes": "",
+    "off_minute":"",
+    "sms":"",
+    "mb":"",
+    "social_mb":"",
+    "validity":"7",
+    "price":""
+  },
+
+
+  {
+    "netwrok_name": "Ufone",
+    "package_name": "",
+    "on_minutes": "",
+    "off_minute":"",
+    "sms":"",
+    "mb":"",
+    "social_mb":"",
+    "validity":"7",
+    "price":""
+  }
+
+
+
+
+]

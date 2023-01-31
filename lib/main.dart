@@ -11,38 +11,31 @@ import 'package:path_provider/path_provider.dart';
 
 //import 'Model/details_model.dart';
 
-void main() async {
-
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Directory directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
-  // Hive.registerAdapter<DetailsModel>(DetailsModelAdapter());
-   await Hive.openBox('details');
-
-
+  Hive.registerAdapter<DetailsModel>(DetailsModelAdapter());
+  await Hive.openBox<DetailsModel>('details');
 
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
-
-
-
   const MyApp({super.key});
 
-   @override
+  @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context , child) {
+      builder: (context, child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'NetWork Packages',
           theme: ThemeData(
-            useMaterial3:  true,
+            useMaterial3: true,
           ),
           home: child,
         );
@@ -51,4 +44,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
