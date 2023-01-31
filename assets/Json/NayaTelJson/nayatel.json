@@ -1,0 +1,100 @@
+[
+  {
+    "company": "Nayatel",
+    "speed": "10 Mbps",
+    "package_name": "Unlimited 10Mbps",
+    "price": "1,675/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "Unlimited 15Mbps",
+    "speed": "15 Mbps",
+    "price": "2050/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "Unlimited 20Mbps",
+    "speed": "20 Mbps",
+    "price": "2475/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "Unlimited 25Mbps",
+    "speed": "25 Mbps",
+    "price": "2950/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "Unlimited 30Mbps",
+    "speed": "30 Mbps",
+    "price": "3450/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "Unlimited 50Mbps",
+    "speed": "50 Mbps",
+    "price": "5250/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "Unlimited 70Mbps",
+    "speed": "70 Mbps",
+    "price": "7650/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "Unlimited 100Mbps",
+    "speed": "100 Mbps",
+    "price": "10499/mo",
+    "download": "Unlimited"
+  },
+  {
+    "company": "Nayatel",
+    "speed": "30 Mbps",
+    "package_name": "CONNECT 3580 45M",
+    "price": "10700/mo",
+    "download": "1024 GB"
+  },
+  {
+    "company": "Nayatel",
+    "speed": "35 Mbps",
+    "package_name": "CONNECT 3580 45M",
+    "price": "14900",
+    "download": "1430 GB"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "CONNECT 3580 45M",
+    "speed": "35 GB",
+    "price": "21400/mo",
+    "download": "2048 GB"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "CONNECT 3580 45M",
+    "speed": "40 Mbps",
+    "price": " 26,900/mo",
+    "download": "2560"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "CONNECT 3580 45M",
+    "speed": "40 Mbps",
+    "price": "33,600/mo",
+    "download": "3072 GB"
+  },
+  {
+    "company": "Nayatel",
+    "package_name": "CONNECT 3580 45M",
+    "speed": "45 Mbps",
+    "price": "3700/mo",
+    "download": "3580 GB"
+  }
+]
