@@ -43,6 +43,7 @@ dependencies:
   hive_flutter:
   path_provider: ^2.0.11
   hive_generator: any
+  animated_text_kit: ^4.2.2
   provider: any
   flutter_screenutil: ^5.6.0
   get:

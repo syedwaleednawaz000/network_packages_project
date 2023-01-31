@@ -82,7 +82,7 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                                 SizedBox(
                                                   // color: Colors.yellow,
                                                   width: MediaQuery.of(context).size.width*0.38,
-                                                  child: Text(myData[index]['package_name'],overflow: TextOverflow.ellipsis,style: const TextStyle(
+                                                  child: Text(myData[index]['name'],overflow: TextOverflow.ellipsis,style: const TextStyle(
                                                       fontSize: 15,
                                                       fontWeight: FontWeight.bold)),
                                                 ),
