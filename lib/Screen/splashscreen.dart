@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     formattedDate = DateFormat('dd-MM-yyyy').format(now);
     // formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(now);
-    Timer(const Duration(seconds: 2), (){
+    Timer(const Duration(seconds: 9), (){
       Get.offAll(()=> const DashBoardScreen());
     });
     // TODO: implement initState
@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:  [
-              const Center(child: Text(("All packages Updated to"),style: TextStyle(color: Colors.white),)),
+               Center(child: Image.asset('assets/images/main_logo.png')),
               Center(child: Text(("${formattedDate.toString()}"),style: const TextStyle(color: Colors.white),)),
             ],
           ),
