@@ -30,19 +30,20 @@ class _AboutScreenState extends State<AboutScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                 GestureDetector(
-                   onTap: (){
-                     Get.to(NotificationScreen());
-                   },
-                   child: const Text(
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(NotificationScreen());
+                    },
+                    child: const Text(
                       "Notification",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
-                 ),
+                  ),
                   Switch(
+                      activeColor: Colors.white,
                       value: notification,
                       onChanged: (value) {
                         setState(() {
@@ -51,27 +52,27 @@ class _AboutScreenState extends State<AboutScreen> {
                       }),
                 ],
               ),
-            const SizedBox(height: 15,),
-
-               GestureDetector(
-                 onTap: (){
-                   Get.to(AboutScreenPage());
-                 },
-                 child: const SizedBox(
-                   width: double.infinity,
-                   child: Text("About us",
-
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20)),
-                 ),
-               ),
               const SizedBox(
                 height: 30,
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
+                  Get.to(ComplainentScreenPage());
+                },
+                child: const SizedBox(
+                  width: double.infinity,
+                  child: Text("Complaint",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20)),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              GestureDetector(
+                onTap: () {
                   Get.to(ContactScreenPage());
                 },
                 child: const SizedBox(
@@ -87,12 +88,12 @@ class _AboutScreenState extends State<AboutScreen> {
                 height: 30,
               ),
               GestureDetector(
-                onTap: (){
-                  Get.to(ComplainentScreenPage());
+                onTap: () {
+                  Get.to(AboutScreenPage());
                 },
                 child: const SizedBox(
                   width: double.infinity,
-                  child: Text("Complaint",
+                  child: Text("About us",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

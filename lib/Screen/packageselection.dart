@@ -41,6 +41,7 @@ class PackageSelectionScreen extends StatelessWidget {
                   return InkWell(
                     onTap: (){
                       Get.to(PackageDetailsScreen(
+                        selectIndex: selectIndex,
                         image: image,
                       ));
                     },

@@ -47,7 +47,6 @@ class FavouriteScreen extends StatelessWidget {
   List<String> faveIcons = [];
   final Imgcontroller _imgcontroller = Get.put(Imgcontroller());
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +60,8 @@ class FavouriteScreen extends StatelessWidget {
               children: [
                 const Text(("Favourite")),
                 ValueListenableBuilder<Box<DetailsModel>>(
-                  valueListenable: Hive.box<DetailsModel>('details').listenable(),
+                  valueListenable:
+                      Hive.box<DetailsModel>('details').listenable(),
                   builder: (context, Box box, _) {
                     if (box.path == null) {
                       return const Center(
@@ -77,7 +77,6 @@ class FavouriteScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final detail = box.getAt(index);
                             print("this si our length ${box.length}");
-                            // print("this is image path ${note!.imageUrl.toString()}");
                             return Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
@@ -98,18 +97,28 @@ class FavouriteScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Image.asset(detail.companyImage.toString(),
-                                          // _imgcontroller.getModelimgData[index].img.toString(),
+                                        Image.asset(
+                                          detail.companyImage.toString() == "0" ? AppImages.ufoneLogo :
+                                          detail.companyImage.toString() == "1" ? AppImages.zongLogo:
+                                          detail.companyImage.toString() == "2" ? AppImages.jazzLogo :
+                                          detail.companyImage.toString() == "3" ? AppImages.telenorLogo:
+                                          detail.companyImage.toString() == "4" ? AppImages.waridLogo :
+                                          detail.companyImage.toString() == "5" ? AppImages.ptclLogo :
+                                          AppImages.nayatelLogo,
                                           width: 50,
                                           height: 50,
                                         ),
-                                         Text(detail.packageName.toString(),
-                                        ),
+                                        Text(detail.packageName.toString(),
+                                            style: const TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold)),
                                         InkWell(
                                             onTap: () {
-                                              box.deleteAt(index);
-                                              AppConstant.flutterToastWithMessage(message: "Successfully Deleted");
                                               // hive remove code here
+                                              box.deleteAt(index);
+                                              AppConstant.flutterToastWithMessage(
+                                                  message:
+                                                      "Successfully Deleted");
                                             },
                                             child: const Icon(
                                               Icons.favorite,
@@ -122,17 +131,14 @@ class FavouriteScreen extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(detail.price.toString(),
-
                                             style: const TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold)),
                                         Text(detail.onNetMints.toString(),
-                                            //'OnNet Minutes: ${box.get('details')['OnNet Minutes']}',
                                             style: const TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold)),
                                         Text(detail.ofNetMints.toString(),
-                                            //'Off Net Minutes: ${box.get('details')['Off Net Minutes']}',
                                             style: const TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold)),
@@ -164,17 +170,14 @@ class FavouriteScreen extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(detail.mb.toString(),
-
                                             style: const TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold)),
                                         Text(detail.socialMB.toString(),
-
                                             style: const TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold)),
                                         Text(detail.sMS.toString(),
-
                                             style: const TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.bold)),
@@ -203,15 +206,13 @@ class FavouriteScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(detail.activationCode.toString(),
-                                          //box.get('details')['Activation Code'],
+                                        Text(
+                                          detail.activationCode.toString(),
                                           style: TextStyle(
                                               fontSize: 15.sp,
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Text(
-                                            detail.deactivationCode.toString(),
-                                         //   box.get('details')['Deactivation Code'],
+                                        Text(detail.deactivationCode.toString(),
                                             style: TextStyle(
                                                 fontSize: 15.sp,
                                                 fontWeight: FontWeight.bold)),
@@ -226,29 +227,29 @@ class FavouriteScreen extends StatelessWidget {
                                       children: [
                                         GestureDetector(
                                             onTap: () {
-                                              // shareText(
-                                              //   shareText: codeNumber[index],
-                                              // );
+                                              shareText(
+                                                shareText: codeNumber[index],
+                                              );
                                             },
                                             child: const Icon(
                                                 Icons.share_outlined)),
                                         GestureDetector(
                                             onTap: () {
-                                              // _callNumber(
-                                              //     number: codeNumber[index]);
+                                              _callNumber(
+                                                  number: codeNumber[index]);
                                             },
                                             child: const Icon(
                                                 Icons.dialer_sip_outlined)),
                                         GestureDetector(
                                             onTap: () {
-                                              // FlutterClipboard.copy(
-                                              //         codeNumber[index])
-                                              //     .then((value) {
-                                              //   AppConstant.flutterToast();
-                                              //   if (kDebugMode) {
-                                              //     print('copied');
-                                              //   }
-                                              // });
+                                              FlutterClipboard.copy(
+                                                      codeNumber[index])
+                                                  .then((value) {
+                                                AppConstant.flutterToast();
+                                                if (kDebugMode) {
+                                                  print('copied');
+                                                }
+                                              });
                                             },
                                             child: const Icon(Icons.copy))
                                       ],

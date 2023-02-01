@@ -14,7 +14,8 @@ import 'package:share_plus/share_plus.dart';
 import '../Utils/appimages.dart';
 
 class PackageDetailsScreen extends StatelessWidget {
-  PackageDetailsScreen({Key? key, required this.image}) : super(key: key);
+  int? selectIndex;
+  PackageDetailsScreen({Key? key, required this.selectIndex,required this.image}) : super(key: key);
 
   List<String> NameList = ["Ufone"];
 
@@ -83,7 +84,10 @@ class PackageDetailsScreen extends StatelessWidget {
                                               height: 50,
                                             ),
                                             Text(
-                                              myData[index]['package_name'],
+                                              myData[index]['package_name'],style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight:
+                                                FontWeight.bold)
                                             ),
                                             InkWell(
                                                 onTap: () {
@@ -99,7 +103,8 @@ class PackageDetailsScreen extends StatelessWidget {
                                                               sMS: myData[index]['sms'],
                                                               activationCode: myData[index]['activation_code'],
                                                               deactivationCode: '*8374#',
-                                                              companyImage: image.toString()));
+                                                              //this index used for image condition in fav screen
+                                                              companyImage: selectIndex.toString()));
                                                   AppConstant
                                                       .flutterToastWithMessage(
                                                           message:

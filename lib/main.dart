@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:network_packages_project/Model/details_model.dart';
 import 'package:network_packages_project/Screen/splashscreen.dart';
-import 'package:network_packages_project/Screen/test.dart';
 import 'package:path_provider/path_provider.dart';
 
 //import 'Model/details_model.dart';

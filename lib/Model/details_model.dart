@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:typed_data';
+
 import 'package:hive/hive.dart';
 part 'details_model.g.dart';
 
@@ -6,11 +7,11 @@ part 'details_model.g.dart';
 @HiveType(typeId: 0)
 class DetailsModel extends HiveObject{
 
+  //Credentials......
   @HiveField(0)
   String packageName;
   @HiveField(1)
   String price;
-
   @HiveField(2)
   String onNetMints;
   @HiveField(3)
@@ -26,11 +27,11 @@ class DetailsModel extends HiveObject{
   @HiveField(8)
   String deactivationCode;
 
-  //Images
-
+  //Images.....
   @HiveField(9)
-  String companyImage;
+   String companyImage;
 
+  //Uint8List? companyImage;
 
   DetailsModel({
     required this.packageName,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:network_packages_project/Widget/appBar.dart';
 
 import '../Widget/appbarwidgetsecond.dart';
 class AboutScreenPage extends StatefulWidget {
