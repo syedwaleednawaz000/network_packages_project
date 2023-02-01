@@ -38,21 +38,11 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height*1,
-          decoration:  BoxDecoration(
-            // image: DecorationImage(
-            //   image: AssetImage('assets/images/main_logo.png',),fit: BoxFit.fill
-            // )
-          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:  [
                Center(
-                   // height: MediaQuery.of(context).size.height*0.3,
-                   // width: MediaQuery.of(context).size.width*0.8,
-                   // decoration: BoxDecoration(
-                   //   shape: BoxShape.circle
-                   // ),
                    child: Image.asset('assets/images/main_logo.png',fit: BoxFit.cover,)),
               AnimatedTextKit(
                 animatedTexts: [

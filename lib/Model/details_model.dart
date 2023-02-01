@@ -1,7 +1,5 @@
 import 'dart:typed_data';
-
 import 'package:hive/hive.dart';
-part 'details_model.g.dart';
 
 
 @HiveType(typeId: 0)

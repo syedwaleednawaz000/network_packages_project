@@ -1,10 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
-
-part of 'details_model.dart';
-
-// **************************************************************************
-// TypeAdapterGenerator
-// **************************************************************************
+import 'package:hive/hive.dart';
+import 'details_model.dart';
 
 class DetailsModelAdapter extends TypeAdapter<DetailsModel> {
   @override
