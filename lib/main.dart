@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:hive/hive.dart';
 import 'package:network_packages_project/Model/details_model.dart';
 import 'package:network_packages_project/Model/details_model.g.dart';
@@ -10,11 +11,10 @@ import 'package:network_packages_project/Screen/splashscreen.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'Screen/bottomnaviagtionscreen.dart';
-
-//import 'Model/details_model.dart';
-
+import 'adstesting/homescreen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   Directory directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
   Hive.registerAdapter<DetailsModel>(DetailsModelAdapter());
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const DashBoardScreen(),
+      child: const HomePage(),
     );
   }
 }
