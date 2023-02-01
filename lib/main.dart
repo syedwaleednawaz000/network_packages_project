@@ -19,9 +19,11 @@ Future<void> main() async {
   await Hive.openBox<DetailsModel>('details');
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   runApp(const MyApp());
   FlutterNativeSplash.remove();
 }
+
 
 
 class MyApp extends StatelessWidget {
