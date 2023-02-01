@@ -1,0 +1,141 @@
+[
+  {
+    "company": "PTCL",
+    "speed": "1 Mbps",
+    "package_name": "PTCL 1mbps Economy Package",
+    "price": "599/mo",
+    "download": "10 GB"
+  },  {
+  "company": "PTCL",
+  "speed": "2 Mbps",
+  "package_name": "PTCL 2mbps Economy Package",
+  "price": "750/mo",
+  "download": "15 GB"
+},  {
+  "company": "PTCL",
+  "speed": "9.3 Mbps",
+  "package_name": "PTCL CharJi Evo Cloud & Wingle 25 GB Data Package",
+  "price": "1149/mo",
+  "download": "25 GB"
+},  {
+  "company": "PTCL",
+  "speed": "1 Mbps",
+  "package_name": "PTCL 1 Mbps Student Package",
+  "price": "1299/mo",
+  "download": "Unlimited"
+},    {
+  "company": "PTCL",
+  "speed": "1 Mbps",
+  "package_name": "Unlimited 10Mbps",
+  "price": "/mo",
+  "download": ""
+},  {
+  "company": "PTCL",
+  "speed": "9.3 Mbps",
+  "package_name": "PTCL CharJi Evo Cloud & Wingle 35 GB Data Package",
+  "price": "1399/mo",
+  "download": "35 GB"
+},  {
+  "company": "PTCL",
+  "speed": "2 Mbps",
+  "package_name": "PTCL 2mbp’s Unlimited Package",
+  "price": "1450/mo",
+  "download": "Unlimited"
+},  {
+  "company": "PTCL",
+  "speed": "2 Mbps",
+  "package_name": "PTCL 2 Mbps Student Package",
+  "price": "1549/mo",
+  "download": "Unlimited"
+},  {
+  "company": "PTCL",
+  "speed": "9.3 Mbps",
+  "package_name": "PTCL CharJi Evo Cloud & Wingle 50 GB Data Package",
+  "price": "1675/mo",
+  "download": "50 GB"
+},  {
+  "company": "PTCL",
+  "speed": "9.3 Mbps",
+  "package_name": "PTCL CharJi Evo Cloud & Wingle Unlimited Data Package",
+  "price": "1699/mo",
+  "download": "Unlimited"
+},  {
+  "company": "PTCL",
+  "speed": "4 Mbps",
+  "package_name": "PTCL 4mbps Unlimited Package",
+  "price": "1700/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "6 Mbps",
+  "package_name": "PTCL 6mbps Unlimited Package",
+  "price": "1875/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "4 Mbps",
+  "package_name": "PTCL 4mbps Triple Play Bundle",
+  "price": "2150/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "9.3 Mbps",
+  "package_name": "PTCL CharJi Evo Cloud & Wingle Unlimited Data Package",
+  "price": "2199/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "8 Mbps",
+  "package_name": "PTCL 8mbps Unlimited Package",
+  "price": "2355/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "15 Mbps",
+  "package_name": "PTCL 15mbps Unlimited Package",
+  "price": "2870/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "25 Mbps",
+  "package_name": "PTCL 25mbps Unlimited Package",
+  "price": "3445/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "4 Mbps",
+  "package_name": "Ptcl Broadband 4mbps + Charji Package",
+  "price": "400/mo",
+  "download": "200 GB"
+},{
+  "company": "PTCL",
+  "speed": "9.3 Mbps",
+  "package_name": "Ptcl Evo Car-Fi package",
+  "price": "4000/mo",
+  "download": "150 GB"
+},{
+  "company": "PTCL",
+  "speed": "8 Mbps",
+  "package_name": "Ptcl Broadband 8mbps + Charji Package",
+  "price": "5000/mo",
+  "download": "250 GB"
+},{
+  "company": "PTCL",
+  "speed": "9.3 Mbps",
+  "package_name": "Ptcl Evo Car-Fi 6 Month package",
+  "price": "5000/mo",
+  "download": "30 GB"
+},{
+  "company": "PTCL",
+  "speed": "50 Mbps",
+  "package_name": "PTCL 50mbps Unlimited Package",
+  "price": "5295/mo",
+  "download": "Unlimited"
+},{
+  "company": "PTCL",
+  "speed": "100 Mbps",
+  "package_name": "PTCL 100mbps Unlimited Package",
+  "price": "7845/mo",
+  "download": "Unlimited"
+}
+]
