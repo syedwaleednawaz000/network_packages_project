@@ -9,6 +9,8 @@ import 'package:network_packages_project/Model/details_model.g.dart';
 import 'package:network_packages_project/Screen/splashscreen.dart';
 import 'package:path_provider/path_provider.dart';
 
+import 'Screen/bottomnaviagtionscreen.dart';
+
 //import 'Model/details_model.dart';
 
 Future<void> main() async {
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const SplashScreen(),
+      child: const DashBoardScreen(),
     );
   }
 }
