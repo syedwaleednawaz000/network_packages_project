@@ -5,33 +5,35 @@ part 'details_model.g.dart';
 
 @HiveType(typeId: 0)
 class DetailsModel extends HiveObject{
+
   @HiveField(0)
-  String price;
+  String packageName;
   @HiveField(1)
-  String onNetMints;
+  String price;
+
   @HiveField(2)
-  String ofNetMints;
+  String onNetMints;
   @HiveField(3)
-  String mb;
+  String ofNetMints;
   @HiveField(4)
-  String socialMB;
+  String mb;
   @HiveField(5)
-  String sMS;
+  String socialMB;
   @HiveField(6)
-  String activationCode;
+  String sMS;
   @HiveField(7)
+  String activationCode;
+  @HiveField(8)
   String deactivationCode;
 
   //Images
 
-  @HiveField(8)
-  String shareImage;
   @HiveField(9)
-  String sipCallImage;
-  @HiveField(10)
-  String copyImage;
+  String companyImage;
+
 
   DetailsModel({
+    required this.packageName,
     required this.price,
     required this.onNetMints,
     required this.ofNetMints,
@@ -40,7 +42,6 @@ class DetailsModel extends HiveObject{
     required this.sMS,
     required this.activationCode,
     required this.deactivationCode,
-    required this.shareImage,
-    required this.sipCallImage,
-    required this.copyImage,});
+    required this.companyImage,
+    });
 }

@@ -1,21 +1,16 @@
 import 'dart:convert';
-import 'dart:io';
-
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:hive/hive.dart';
 import 'package:network_packages_project/Model/details_model.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
 import 'package:network_packages_project/Utils/appcontant.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:file_picker/file_picker.dart';
-
 import '../Utils/appimages.dart';
 
 class PackageDetailsScreen extends StatelessWidget {
@@ -37,8 +32,8 @@ class PackageDetailsScreen extends StatelessWidget {
           child: Column(
             children: [
               FutureBuilder(
-                  future: DefaultAssetBundle.of(context)
-                      .loadString("assets/Json/UfoneJson/monthly.json"),
+                  future: DefaultAssetBundle.of(context).loadString("assets/Json/UfoneJson/monthly.json"),
+                  initialData: Hive.box<DetailsModel>('details').listenable(),
                   builder: (context, snapshot) {
                     var myData = json.decode(snapshot.data.toString());
                     if (myData == null) {
@@ -53,14 +48,14 @@ class PackageDetailsScreen extends StatelessWidget {
                     } else {
                       return Center(
                           child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ListView.builder(
-                              itemCount: myData.length,
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemBuilder: (context, index) {
-                                print(" data length ${myData.length}");
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ListView.builder(
+                                  itemCount: myData.length,
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    print(" data length ${myData.length}");
                                 return Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Container(
@@ -93,27 +88,18 @@ class PackageDetailsScreen extends StatelessWidget {
                                             InkWell(
                                                 onTap: () {
                                                   // Adding to hive database using box
-                                                  Hive.box<DetailsModel>(
-                                                          'details')
-                                                      .add(
+                                                  Hive.box<DetailsModel>('details').add(
                                                           DetailsModel(
-                                                              price: '340',
-                                                              onNetMints: '569',
-                                                              ofNetMints: '234',
-                                                              mb: '1024',
-                                                              socialMB: '3490',
-                                                              sMS: '10000',
-                                                              activationCode:
-                                                                  '*7548#',
-                                                              deactivationCode:
-                                                                  '*8374#',
-                                                              shareImage:
-                                                                  AppImages
-                                                                      .jazzLogo,
-                                                              sipCallImage:
-                                                                  'sip call',
-                                                              copyImage:
-                                                                  'copy'));
+                                                              packageName: myData[index]['package_name'],
+                                                              price: myData[index]['price'],
+                                                              onNetMints: myData[index]['on_minutes'],
+                                                              ofNetMints: myData[index]['off_minute'],
+                                                              mb: myData[index]['mb'],
+                                                              socialMB: myData[index]['social_mb'],
+                                                              sMS: myData[index]['sms'],
+                                                              activationCode: myData[index]['activation_code'],
+                                                              deactivationCode: '*8374#',
+                                                              companyImage: image.toString()));
                                                   AppConstant
                                                       .flutterToastWithMessage(
                                                           message:

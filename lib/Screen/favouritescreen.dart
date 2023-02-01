@@ -63,8 +63,6 @@ class FavouriteScreen extends StatelessWidget {
                 ValueListenableBuilder<Box<DetailsModel>>(
                   valueListenable: Hive.box<DetailsModel>('details').listenable(),
                   builder: (context, Box box, _) {
-                    var data = box.values.toList().cast<DetailsModel>();
-
                     if (box.path == null) {
                       return const Center(
                         child: CircularProgressIndicator(
@@ -100,16 +98,13 @@ class FavouriteScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Image.asset('assets/images/ios_logo.png',
+                                        Image.asset(detail.companyImage.toString(),
                                           // _imgcontroller.getModelimgData[index].img.toString(),
                                           width: 50,
                                           height: 50,
                                         ),
-                                        // const Text('Dummy text'
-                                        //
-                                        //
-                                        //    // NameList[index]
-                                        // ),
+                                         Text(detail.packageName.toString(),
+                                        ),
                                         InkWell(
                                             onTap: () {
                                               box.deleteAt(index);

@@ -25,38 +25,35 @@ class DetailsModelAdapter extends TypeAdapter<DetailsModel> {
       sMS: fields[5] as String,
       activationCode: fields[6] as String,
       deactivationCode: fields[7] as String,
-      shareImage: fields[8] as String,
-      sipCallImage: fields[9] as String,
-      copyImage: fields[10] as String,
+      companyImage: fields[8] as String,
+      packageName: fields[9] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, DetailsModel obj) {
     writer
-      ..writeByte(11)
-      ..writeByte(0)
-      ..write(obj.price)
-      ..writeByte(1)
-      ..write(obj.onNetMints)
-      ..writeByte(2)
-      ..write(obj.ofNetMints)
-      ..writeByte(3)
-      ..write(obj.mb)
-      ..writeByte(4)
-      ..write(obj.socialMB)
-      ..writeByte(5)
-      ..write(obj.sMS)
-      ..writeByte(6)
-      ..write(obj.activationCode)
-      ..writeByte(7)
-      ..write(obj.deactivationCode)
-      ..writeByte(8)
-      ..write(obj.shareImage)
-      ..writeByte(9)
-      ..write(obj.sipCallImage)
       ..writeByte(10)
-      ..write(obj.copyImage);
+      ..writeByte(0)
+      ..write(obj.companyImage)
+      ..writeByte(1)
+      ..write(obj.price)
+      ..writeByte(2)
+      ..write(obj.onNetMints)
+      ..writeByte(3)
+      ..write(obj.ofNetMints)
+      ..writeByte(4)
+      ..write(obj.mb)
+      ..writeByte(5)
+      ..write(obj.socialMB)
+      ..writeByte(6)
+      ..write(obj.sMS)
+      ..writeByte(7)
+      ..write(obj.activationCode)
+      ..writeByte(8)
+      ..write(obj.deactivationCode)
+      ..writeByte(9)
+      ..write(obj.companyImage);
   }
 
   @override
