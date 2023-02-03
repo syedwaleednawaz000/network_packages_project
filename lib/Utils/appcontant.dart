@@ -3,7 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:network_packages_project/Utils/appcolors.dart';
 
 class AppConstant{
-
+  static String appName = "All Network Packages";
   static flutterToast() => Fluttertoast.showToast(
       msg: "Successfully Copy",
       toastLength: Toast.LENGTH_SHORT,

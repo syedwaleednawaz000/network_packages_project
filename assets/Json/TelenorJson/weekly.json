@@ -1,15 +1,74 @@
 [
   {
-    "netwrok_name": "",
-    "package_name": "",
-    "on_minutes": "",
-    "off_minute":"",
-    "sms":"",
-    "mb":"",
-    "social_mb":"",
-    "validity":"",
-    "price":"",
-    "activation_code": "",
+    "netwrok_name": "Telenor",
+    "package_name": "Sahulat Mini Offer",
+    "on_minutes": "200",
+    "off_minute":"20",
+    "sms":"200",
+    "mb":"100 MB",
+    "social_mb":"200 MB",
+    "validity":"7 day",
+    "price":"75",
+    "activation_code": "*170#",
     "deactivation_code": ""
-  }
-]
+  },{
+  "netwrok_name": "Telenor",
+  "package_name": "Haftawar Chappar Phaar Offer",
+  "on_minutes": "UNLIMITED",
+  "off_minute":"0",
+  "sms":"",
+  "mb":"70 MB",
+  "social_mb":"350 MB",
+  "validity":"7 day",
+  "price":"90",
+  "activation_code": "*5*700#",
+  "deactivation_code": ""
+},{
+  "netwrok_name": "Telenor",
+  "package_name": "Haftawar Sahulat Offer",
+  "on_minutes": "1000",
+  "off_minute":"70",
+  "sms":"700",
+  "mb":"100 MB",
+  "social_mb":"350 MB",
+  "validity":"7 day",
+  "price":"115",
+  "activation_code": "*5*7#",
+  "deactivation_code": ""
+},{
+  "netwrok_name": "Telenor",
+  "package_name": "Weekly Internet All In One",
+  "on_minutes": "0",
+  "off_minute":"0",
+  "sms":"0",
+  "mb":"2000 MB",
+  "social_mb":"0",
+  "validity":"7 day",
+  "price":"120",
+  "activation_code": "*345*75#",
+  "deactivation_code": ""
+},{
+  "netwrok_name": "Telenor",
+  "package_name": "Weekly Easy Card",
+  "on_minutes": "1000",
+  "off_minute":"50",
+  "sms":"",
+  "mb":"1500 MB",
+  "social_mb":"0",
+  "validity":"7 day",
+  "price":"135",
+  "activation_code": "*963#",
+  "deactivation_code": ""
+},{
+  "netwrok_name": "Telenor",
+  "package_name": "Weekly Internet All In One Plus",
+  "on_minutes": "500",
+  "off_minute":"0",
+  "sms":"0",
+  "mb":"5 GB",
+  "social_mb":"",
+  "validity":"7 days",
+  "price":"190",
+  "activation_code": "*444#",
+  "deactivation_code": ""
+}]

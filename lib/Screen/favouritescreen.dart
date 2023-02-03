@@ -58,7 +58,6 @@ class FavouriteScreen extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
-                const Text(("Favourite")),
                 ValueListenableBuilder<Box<DetailsModel>>(
                   valueListenable:
                       Hive.box<DetailsModel>('details').listenable(),
@@ -97,94 +96,149 @@ class FavouriteScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Image.asset(
-                                          detail.companyImage.toString() == "0" ? AppImages.ufoneLogo :
-                                          detail.companyImage.toString() == "1" ? AppImages.zongLogo:
-                                          detail.companyImage.toString() == "2" ? AppImages.jazzLogo :
-                                          detail.companyImage.toString() == "3" ? AppImages.telenorLogo:
-                                          detail.companyImage.toString() == "4" ? AppImages.waridLogo :
-                                          detail.companyImage.toString() == "5" ? AppImages.ptclLogo :
-                                          AppImages.nayatelLogo,
-                                          width: 50,
-                                          height: 50,
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.2,
+                                          child: Image.asset(
+                                            detail.companyImage.toString() == "0" ? AppImages.ufoneLogo :
+                                            detail.companyImage.toString() == "1" ? AppImages.zongLogo:
+                                            detail.companyImage.toString() == "2" ? AppImages.jazzLogo :
+                                            detail.companyImage.toString() == "3" ? AppImages.telenorLogo:
+                                            detail.companyImage.toString() == "4" ? AppImages.waridLogo :
+                                            detail.companyImage.toString() == "5" ? AppImages.ptclLogo :
+                                            AppImages.nayatelLogo,
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                         ),
-                                        Text(detail.packageName.toString(),
-                                            style: const TextStyle(
-                                                fontSize: 15,
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.4,
+                                          child: Text(detail.packageName.toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.1,
+                                          child: InkWell(
+                                              onTap: () {
+                                                // hive remove code here
+                                                box.deleteAt(index);
+                                                AppConstant.flutterToastWithMessage(
+                                                    message:
+                                                        "Successfully Deleted");
+                                              },
+                                              child: Row(
+                                                children: [
+                                                  Spacer(),
+                                                  const Icon(
+                                                    Icons.favorite,
+                                                    color: Colors.pinkAccent,
+                                                  ),
+                                                ],
+                                              )),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                      children:  [
+                                        Text('RS',
+                                            style: TextStyle(
+                                                fontSize: 15.sp,
                                                 fontWeight: FontWeight.bold)),
-                                        InkWell(
-                                            onTap: () {
-                                              // hive remove code here
-                                              box.deleteAt(index);
-                                              AppConstant.flutterToastWithMessage(
-                                                  message:
-                                                      "Successfully Deleted");
-                                            },
-                                            child: const Icon(
-                                              Icons.favorite,
-                                              color: Colors.pinkAccent,
-                                            )),
+                                        Text('On Net Minutes',
+                                            style: TextStyle(
+                                                fontSize: 15.sp,
+                                                fontWeight: FontWeight.bold)),
+                                        Text('Off Net Minutes',
+                                            style: TextStyle(
+                                                fontSize: 15.sp,
+                                                fontWeight: FontWeight.bold)),
+                                      ],
+                                    ),
+                                    SizedBox(height: 7,),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.3,
+                                          child: Text(detail.price.toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 15,)),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.3,
+                                          child: Text(detail.onNetMints.toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 15,)),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.1,
+                                          child: Text(detail.ofNetMints.toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 15,)),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 5.h,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children:  [
+
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.3,
+                                          child: Text('Internet MB',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.3,
+                                          child: Text('Social MB',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.1,
+                                          child: Text('SMS',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold)),
+                                        ),
                                       ],
                                     ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(detail.price.toString(),
-                                            style: const TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                        Text(detail.onNetMints.toString(),
-                                            style: const TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                        Text(detail.ofNetMints.toString(),
-                                            style: const TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.3,
+                                          child: Text(detail.mb.toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 15,)),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.3,
+                                          child: Text(detail.socialMB.toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 15,)),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width*0.1,
+                                          child: Text(detail.sMS.toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 15,)),
+                                        ),
                                       ],
                                     ),
                                     SizedBox(
-                                      height: 12.h,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: const [
-                                        Text('Internet MB',
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                        Text('Social MB',
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                        Text('SMS',
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(detail.mb.toString(),
-                                            style: const TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                        Text(detail.socialMB.toString(),
-                                            style: const TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                        Text(detail.sMS.toString(),
-                                            style: const TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 12.h,
+                                      height: 5.h,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -204,18 +258,17 @@ class FavouriteScreen extends StatelessWidget {
                                     ),
                                     Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           detail.activationCode.toString(),
                                           style: TextStyle(
-                                              fontSize: 15.sp,
-                                              fontWeight: FontWeight.bold),
+                                              fontSize: 15.sp,),
                                         ),
+                                        SizedBox(width: 102.w,),
                                         Text(detail.deactivationCode.toString(),
                                             style: TextStyle(
-                                                fontSize: 15.sp,
-                                                fontWeight: FontWeight.bold)),
+                                                fontSize: 15.sp,)),
                                       ],
                                     ),
                                     SizedBox(

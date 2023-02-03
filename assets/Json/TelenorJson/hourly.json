@@ -1,15 +1,39 @@
 [
   {
-    "netwrok_name": "",
-    "package_name": "",
-    "on_minutes": "",
-    "off_minute":"",
-    "sms":"",
-    "mb":"",
-    "social_mb":"",
-    "validity":"",
-    "price":"",
-    "activation_code": "",
+    "netwrok_name": "Telenor",
+    "package_name": "Social Pack",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"70 MB",
+    "social_mb":"0",
+    "validity":"1 hour",
+    "price":"2.5",
+    "activation_code": "*311#",
     "deactivation_code": ""
-  }
+  },{
+  "netwrok_name": "Telenor",
+  "package_name": "Youtube Offer",
+  "on_minutes": "0",
+  "off_minute":"0",
+  "sms":"0",
+  "mb":"500 MB",
+  "social_mb":"0",
+  "validity":"1 hour",
+  "price":"8",
+  "activation_code": "*60#",
+  "deactivation_code": ""
+},{
+  "netwrok_name": "Telenor",
+  "package_name": "Off-Peak Package",
+  "on_minutes": "0",
+  "off_minute":"0",
+  "sms":"0",
+  "mb":"1500 MB",
+  "social_mb":"0",
+  "validity":"1 hour",
+  "price":"15",
+  "activation_code": "*10#",
+  "deactivation_code": ""
+}
 ]

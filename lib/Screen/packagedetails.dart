@@ -11,7 +11,6 @@ import 'package:network_packages_project/Utils/appcolors.dart';
 import 'package:network_packages_project/Utils/appcontant.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
 import 'package:share_plus/share_plus.dart';
-import '../Utils/appimages.dart';
 
 class PackageDetailsScreen extends StatelessWidget {
   int? selectIndex;
@@ -62,8 +61,8 @@ class PackageDetailsScreen extends StatelessWidget {
                                   child: Container(
                                     // height: 150.h,
                                     padding: EdgeInsets.only(
-                                        left: 15.w,
-                                        right: 15.w,
+                                        left: 10.w,
+                                        right: 10.w,
                                         top: 10.h,
                                         bottom: 10.h),
                                     width: double.infinity,
@@ -78,42 +77,51 @@ class PackageDetailsScreen extends StatelessWidget {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Image.asset(
-                                              image.toString(),
-                                              width: 50,
-                                              height: 50,
+                                            Container(
+                                              width: MediaQuery.of(context).size.width*0.2,
+                                              child: Image.asset(
+                                                image.toString(),
+                                                width: 50,
+                                                height: 50,
+                                              ),
                                             ),
-                                            Text(
-                                              myData[index]['package_name'],style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight:
-                                                FontWeight.bold)
+                                            Container(
+                                              width: MediaQuery.of(context).size.width*0.45,
+                                              child: Text(
+                                                myData[index]['package_name'],style: TextStyle(
+                                                  fontSize: 13,
+                                                  fontWeight:
+                                                  FontWeight.bold)
+                                              ),
                                             ),
-                                            InkWell(
-                                                onTap: () {
-                                                  // Adding to hive database using box
-                                                  Hive.box<DetailsModel>('details').add(
-                                                          DetailsModel(
-                                                              packageName: myData[index]['package_name'],
-                                                              price: myData[index]['price'],
-                                                              onNetMints: myData[index]['on_minutes'],
-                                                              ofNetMints: myData[index]['off_minute'],
-                                                              mb: myData[index]['mb'],
-                                                              socialMB: myData[index]['social_mb'],
-                                                              sMS: myData[index]['sms'],
-                                                              activationCode: myData[index]['activation_code'],
-                                                              deactivationCode: '*8374#',
-                                                              //this index used for image condition in fav screen
-                                                              companyImage: selectIndex.toString()));
-                                                  AppConstant
-                                                      .flutterToastWithMessage(
-                                                          message:
-                                                              "Successfully Added");
-                                                },
-                                                child: const Icon(
-                                                  Icons.favorite_outline,
-                                                  color: Colors.black,
-                                                )),
+                                            Container(
+                                              width: MediaQuery.of(context).size.width*0.1,
+                                              child: InkWell(
+                                                  onTap: () {
+                                                    // Adding to hive database using box
+                                                    Hive.box<DetailsModel>('details').add(
+                                                            DetailsModel(
+                                                                packageName: myData[index]['package_name'],
+                                                                price: myData[index]['price'],
+                                                                onNetMints: myData[index]['on_minutes'],
+                                                                ofNetMints: myData[index]['off_minute'],
+                                                                mb: myData[index]['mb'],
+                                                                socialMB: myData[index]['social_mb'],
+                                                                sMS: myData[index]['sms'],
+                                                                activationCode: myData[index]['activation_code'],
+                                                                deactivationCode: '*8374#',
+                                                                //this index used for image condition in fav screen
+                                                                companyImage: selectIndex.toString()));
+                                                    AppConstant
+                                                        .flutterToastWithMessage(
+                                                            message:
+                                                                "Successfully Added");
+                                                  },
+                                                  child: const Icon(
+                                                    Icons.favorite_outline,
+                                                    color: Colors.black,
+                                                  )),
+                                            ),
                                           ],
                                         ),
                                         Row(
@@ -122,62 +130,61 @@ class PackageDetailsScreen extends StatelessWidget {
                                           children: const [
                                             Text('Rs',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             Text('On Net Minutes',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             Text('Off Net Minutes',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                           ],
                                         ),
                                         Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                              MainAxisAlignment.start,
                                           children:  [
-                                            Text(myData[index]['price'],
-                                                style: const TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            Text(myData[index]['on_minutes'],
-                                                style: const TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
+                                            Container(
+                                              width: MediaQuery.of(context).size.width*0.1,
+                                              child: Text(myData[index]['price'],
+                                                  style: const TextStyle(
+                                                      fontSize: 15),),
+                                            ),
+                                            SizedBox(width: MediaQuery.of(context).size.width*0.2,),
+                                            Container(
+                                              width: MediaQuery.of(context).size.width*0.357,
+                                              child: Text(myData[index]['on_minutes'],
+                                                  style: const TextStyle(
+                                                      fontSize: 15,)),
+                                            ),
                                             Text(myData[index]['off_minute'],
                                                 style: const TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
+                                                    fontSize: 15,)),
                                           ],
                                         ),
-                                        SizedBox(
-                                          height: 7.h,
-                                        ),
+                                        Divider(thickness: 1,height: 4,),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: const [
                                             Text('MB',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             Text('Social MB',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             Text('SMS',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                           ],
@@ -190,26 +197,22 @@ class PackageDetailsScreen extends StatelessWidget {
                                               width: MediaQuery.of(context).size.width*0.3,
                                               child: Text(myData[index]['mb'],
                                                   style: const TextStyle(
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.bold)),
+                                                      fontSize: 13,)),
                                             ),
-                                             Text(myData[index]['social_mb'],
-                                                style: const TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
-                                            const Spacer(),
+                                             SizedBox(width: MediaQuery.of(context).size.width*0.05,),
+                                             SizedBox(
+                                               width: MediaQuery.of(context).size.width*0.37,
+                                               child: Text(myData[index]['social_mb'],
+                                                  style: const TextStyle(
+                                                      fontSize: 13,)),
+                                             ),
+                                            // const Spacer(),
                                             Text(myData[index]['sms'],
                                                 style: const TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold)),
+                                                    fontSize: 13,)),
                                           ],
                                         ),
-                                        SizedBox(
-                                          height: 7.h,
-                                        ),
+                                        Divider(thickness: 1,height: 4,),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -217,18 +220,15 @@ class PackageDetailsScreen extends StatelessWidget {
                                             Text(
                                               'Activation Code:',
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 13,
                                                   fontWeight: FontWeight.bold),
                                             ),
                                             Text('Deactivation Code:',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                           ],
-                                        ),
-                                        SizedBox(
-                                          height: 7.h,
                                         ),
                                         Row(
                                           mainAxisAlignment:
@@ -237,22 +237,18 @@ class PackageDetailsScreen extends StatelessWidget {
                                             Text(
                                               myData[index]['activation_code'],
                                               style: const TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 13,
                                                   fontWeight: FontWeight.bold),
                                             ),
 
-                                            //TODO Deactivation Code
-
                                             const Text('23534',
                                                 style: TextStyle(
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                           ],
                                         ),
-                                        SizedBox(
-                                          height: 7.h,
-                                        ),
+                                        Divider(thickness: 1,height: 4,),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,

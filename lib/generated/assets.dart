@@ -13,11 +13,11 @@ class Assets {
   static const String TelenorJsonDaily = 'assets/Json/TelenorJson/daily.json';
   static const String TelenorJsonHourly = 'assets/Json/TelenorJson/hourly.json';
   static const String TelenorJsonMonthly = 'assets/Json/TelenorJson/monthly.json';
+  static const String TelenorJsonThreeday = 'assets/Json/TelenorJson/threeday.json';
   static const String TelenorJsonWeekly = 'assets/Json/TelenorJson/weekly.json';
   static const String UfoneJsonDaily = 'assets/Json/UfoneJson/daily.json';
   static const String UfoneJsonMonthly = 'assets/Json/UfoneJson/monthly.json';
   static const String UfoneJsonWeekly = 'assets/Json/UfoneJson/weekly.json';
-  static const String UfoneJsonWeekly1 = 'assets/Json/UfoneJson/weekly1.json';
   static const String WaridJsonDaily = 'assets/Json/WaridJson/daily.json';
   static const String WaridJsonHourly = 'assets/Json/WaridJson/hourly.json';
   static const String WaridJsonMonthly = 'assets/Json/WaridJson/monthly.json';

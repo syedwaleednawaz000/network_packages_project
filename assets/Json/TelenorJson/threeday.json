@@ -1,0 +1,54 @@
+[
+  {
+    "netwrok_name": "Telenor",
+    "package_name": "3 Day Onnet Offer",
+    "on_minutes": "250",
+    "off_minute": "0",
+    "sms": "500",
+    "mb": "15 MB",
+    "social_mb": "0",
+    "validity": "3 day",
+    "price": "36",
+    "activation_code": "*444#",
+    "deactivation_code": ""
+  },
+  {
+    "netwrok_name": "Telenor",
+    "package_name": "Telenor 3/3 Offer",
+    "on_minutes": "600",
+    "off_minute": "0",
+    "sms": "300",
+    "mb": "50 MB",
+    "social_mb": "0",
+    "validity": "3 day",
+    "price": "50",
+    "activation_code": "*345*243#",
+    "deactivation_code": ""
+  },
+  {
+    "netwrok_name": "Telenor",
+    "package_name": "3 Day Sahulat Offer",
+    "on_minutes": "250",
+    "off_minute": "25",
+    "sms": "250",
+    "mb": "50 mb",
+    "social_mb": "100 MB",
+    "validity": "3 days",
+    "price": "52",
+    "activation_code": "*5*3#",
+    "deactivation_code": ""
+  },
+  {
+    "netwrok_name": "Telenor",
+    "package_name": "All In One Offer",
+    "on_minutes": "0",
+    "off_minute": "0",
+    "sms": "0",
+    "mb": "500",
+    "social_mb": "0",
+    "validity": "3 days",
+    "price": "54.89",
+    "activation_code": "*345*45#",
+    "deactivation_code": ""
+  }
+]

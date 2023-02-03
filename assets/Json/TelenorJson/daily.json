@@ -1,15 +1,38 @@
 [
   {
-    "netwrok_name": "",
-    "package_name": "",
-    "on_minutes": "",
-    "off_minute":"",
-    "sms":"",
-    "mb":"",
-    "social_mb":"",
-    "validity":"",
-    "price":"",
-    "activation_code": "",
+    "netwrok_name": "Telenor",
+    "package_name": "Telenor Good Time Offer",
+    "on_minutes": "UNLIMITED For 2 Hours",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"200 MB",
+    "social_mb":"50 MB",
+    "validity":"2 hour",
+    "price":"7",
+    "activation_code": "*345*20#",
     "deactivation_code": ""
-  }
-]
+  },{
+  "netwrok_name": "Telenor",
+  "package_name": "Daily Hybrid Bundle",
+  "on_minutes": "50",
+  "off_minute":"0",
+  "sms":"0",
+  "mb":"10 MB",
+  "social_mb":"0 MB",
+  "validity":"1 day",
+  "price":"10",
+  "activation_code": "*345*700#",
+  "deactivation_code": ""
+},{
+  "netwrok_name": "Telenor",
+  "package_name": "Full Day Offer",
+  "on_minutes": "Unlimited",
+  "off_minute":"0",
+  "sms":"0",
+  "mb":"50 MB",
+  "social_mb":"100 MB",
+  "validity":"1 day",
+  "price":"13.5",
+  "activation_code": "*5*250#",
+  "deactivation_code": ""
+}]
