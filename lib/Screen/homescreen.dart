@@ -7,6 +7,15 @@ import 'package:network_packages_project/Utils/appimages.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
+  List<String> nameList = [
+    'Ufone',
+    'Zong',
+    'Jazz',
+    'Telenor',
+    'Warid',
+    'PTCL',
+    'NAYATEL',
+  ];
   List<String> imageList = [
     AppImages.ufoneLogo,
     AppImages.zongLogo,
@@ -38,8 +47,10 @@ class HomeScreen extends StatelessWidget {
                     onTap: (){
                       Get.to(()=> PackageSelectionScreen(
                         selectIndex: index,
+                        name: nameList[index],
                         image: imageList[index],
                       ));
+                      print("this is our name ${nameList[index].toString()}");
                     },
                     child: Container(
                       height: 70.h,

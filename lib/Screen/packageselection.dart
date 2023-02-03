@@ -8,7 +8,8 @@ import 'package:network_packages_project/Utils/appimages.dart';
 import 'package:network_packages_project/Widget/appBar.dart';
 
 class PackageSelectionScreen extends StatelessWidget {
-  PackageSelectionScreen({Key? key,required this.image,required this.selectIndex}) : super(key: key);
+  String? name ;
+  PackageSelectionScreen({Key? key,required this.name,required this.image,required this.selectIndex}) : super(key: key);
   int? selectIndex;
   String? image ;
   List<String> nameList = [
@@ -21,6 +22,7 @@ class PackageSelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("this is our name ${name.toString()} in select");
     return SafeArea(
       child: Scaffold(
         appBar: AppBarWidget(
@@ -40,7 +42,9 @@ class PackageSelectionScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                   return InkWell(
                     onTap: (){
+                      print("this is our name ${name.toString()}");
                       Get.to(PackageDetailsScreen(
+                        name: name,
                         selectIndex: selectIndex,
                         image: image,
                       ));
