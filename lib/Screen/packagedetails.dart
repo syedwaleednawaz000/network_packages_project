@@ -255,7 +255,7 @@ class PackageDetailsScreen extends StatelessWidget {
                                           children: [
                                             GestureDetector(
                                                 onTap: () {
-                                                  shareText();
+                                                  shareText(shareText: "here share text");
                                                 },
                                                 child: const Icon(
                                                     Icons.share_outlined)),
@@ -295,8 +295,8 @@ class PackageDetailsScreen extends StatelessWidget {
     );
   }
 
-  void shareText() {
-    Share.share('this is the share Text');
+  void shareText({required String shareText}) {
+    Share.share(shareText);
   }
 
   void _callNumber({required String number}) async {
