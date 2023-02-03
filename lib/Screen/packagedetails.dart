@@ -37,7 +37,6 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print("this is name ${widget.name.toString()} in detail");
     return Scaffold(
       backgroundColor: AppColors.backgroundBlackColor,
       appBar: AppBarWidget(title: " Details Of Package"),
@@ -87,14 +86,19 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
                               // shrinkWrap: true,
                               // physics: const NeverScrollableScrollPhysics(),
                               itemBuilder: (context, index) {
-                                if (myData[index]['package_name'].toString().toLowerCase().contains(controller.text.toString().toLowerCase())) {
+                                if (myData[index]['package_name']
+                                    .toString()
+                                    .toLowerCase()
+                                    .contains(
+                                    controller.text.toString().toLowerCase())) {
                                   dataMatch = true;
-                                  print("this is if ");
-                                }else{
+                                  print("true");
+                                } else {
                                   dataMatch = false;
+                                  print("False");
                                 }
-                                print("thisis the datmatch value ${dataMatch.toString()}");
-                                print(" data length ${myData.length}");
+                                // print("thisis the datmatch value ${dataMatch.toString()}");
+                                // print(" data length ${myData.length}");
                                 return myData[index]['package_name']
                                         .toString()
                                         .toLowerCase()
@@ -409,25 +413,30 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
                                           ],
                                         ),
                                       )
-                                    : dataMatch == false && index == myData.length - 1
-                                        ? Container(
-                                  margin: EdgeInsets.only(top: 6),
-                                            padding: EdgeInsets.only(
-                                                left: 6,right: 6),
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-                                              color: Colors.white,
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                "data not match",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                    color: Colors.black,),
-                                              ),
-                                            ),
-                                          )
-                                        : SizedBox();
+                                    : dataMatch ? SizedBox()
+                                        : dataMatch == false &&
+                                                index == myData.length - 1
+                                            ? Container(
+                                                margin: EdgeInsets.only(top: 6),
+                                                padding: EdgeInsets.only(
+                                                    left: 6, right: 6),
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  color: Colors.white,
+                                                ),
+                                                child: Center(
+                                                  child: Text(
+                                                    "data not match",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            : SizedBox();
                               })
                           : ListView.builder(
                               itemCount: myData.length,
