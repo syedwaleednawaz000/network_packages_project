@@ -120,15 +120,8 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
                                   print("this is else state");
                                 }
                               }
-
-                              // print("thisis the datmatch value ${dataMatch.toString()}");
-                              // print(" data length ${myData.length}");
-                              return myData[index]['package_name']
-                                      .toString()
-                                      .toLowerCase()
-                                      .contains(controller.text
-                                          .toString()
-                                          .toLowerCase())
+                              return myData[index]['package_name'].toString().toLowerCase()
+                                  .contains(controller.text.toString().toLowerCase())
                                   ? Container(
                                       // height: 150.h,
                                       margin:
