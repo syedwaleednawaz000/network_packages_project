@@ -67,8 +67,8 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                               crossAxisAlignment: CrossAxisAlignment.end,
                                               children: [
                                                 SizedBox(
-                                                    height: 50,
-                                                    width: 80,
+                                                    height: 50.w,
+                                                    width: 80.h,
                                                     child: Image.asset(image!)),
                                                 const SizedBox(width: 5,),
                                                 Container(
