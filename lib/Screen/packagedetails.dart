@@ -17,9 +17,11 @@ import 'package:share_plus/share_plus.dart';
 class PackageDetailsScreen extends StatefulWidget {
   int? selectIndex;
   String? name;
+  String? selectionName;
 
   PackageDetailsScreen(
       {Key? key,
+        required this.selectionName,
       required this.name,
       required this.selectIndex,
       required this.image})
@@ -43,14 +45,14 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
       child: Scaffold(
         backgroundColor: AppColors.backgroundBlackColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(110.0),
+          preferredSize: Size.fromHeight(105.h),
           child: Column(
             children: [
               AppBar(
                 backgroundColor: AppColors.backgroundBlackColor,
                 title: Container(
-                        padding: const EdgeInsets.only(left: 10),
-                        child:  Text(widget.name.toString(),style: TextStyle(color: Colors.white),)),
+                        padding:  EdgeInsets.only(left: 10.w),
+                        child:  Text("${widget.name.toString()} ${widget.selectionName} Packages",style: TextStyle(fontSize: 16,color: Colors.white),)),
                 elevation: 0,
                 automaticallyImplyLeading: false,
                   actions:  [
@@ -63,8 +65,8 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
                   ]
               ),
               Container(
-                height: 50,
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                height: 50.h,
+                margin: EdgeInsets.symmetric(horizontal: 20.w),
                 width: double.infinity,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10), color: Colors.white),
@@ -77,7 +79,7 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
                   decoration: InputDecoration(
                       hintText: "Search Package",
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.only(left: 10),
+                      contentPadding: EdgeInsets.only(left: 10.w),
                       hintStyle: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold)),
                 ),
@@ -88,8 +90,7 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: FutureBuilder(
-              future: DefaultAssetBundle.of(context)
-                  .loadString("assets/Json/UfoneJson/monthly.json"),
+              future: DefaultAssetBundle.of(context).loadString("assets/Json/UfoneJson/monthly.json"),
               initialData: Hive.box<DetailsModel>('details').listenable(),
               builder: (context, AsyncSnapshot? snapshot) {
                 var myData = json.decode(snapshot!.data);
@@ -124,8 +125,7 @@ class _PackageDetailsScreenState extends State<PackageDetailsScreen> {
                                   .contains(controller.text.toString().toLowerCase())
                                   ? Container(
                                       // height: 150.h,
-                                      margin:
-                                          EdgeInsets.only(bottom: 5, top: 5),
+                                      margin: EdgeInsets.only(bottom: 5, top: 5),
                                       padding: EdgeInsets.only(
                                           left: 10.w,
                                           right: 10.w,

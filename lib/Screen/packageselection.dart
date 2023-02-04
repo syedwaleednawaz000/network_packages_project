@@ -258,6 +258,7 @@ class _PackageSelectionScreenState extends State<PackageSelectionScreen> {
                         onTap: (){
                           _showInterstitialAd();
                           Get.to(PackageDetailsScreen(
+                            selectionName: nameList[index],
                             name: widget.name,
                             selectIndex: widget.selectIndex,
                             image: widget.image,
