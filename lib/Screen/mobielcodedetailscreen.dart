@@ -54,7 +54,6 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                     return Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: Container(
-                                        // height: 150.h,
                                         padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 10.h, bottom: 10.h),
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -72,7 +71,9 @@ class MobileCodeDetailScreen extends StatelessWidget {
                                                     width: 80,
                                                     child: Image.asset(image!)),
                                                 const SizedBox(width: 5,),
-                                                Text("${name} Find ${myData[index]['name'].toString().substring(0,11)}",overflow: TextOverflow.ellipsis,),
+                                                Container(
+                                                    width: MediaQuery.of(context).size.width*0.5,
+                                                    child: Text("${name} Find ${myData[index]['name'].toString()}",overflow: TextOverflow.ellipsis,)),
                                               ],
                                             ),
                                             const SizedBox(height: 10,),
