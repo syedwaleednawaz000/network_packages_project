@@ -1,15 +1,15 @@
 [
   {
-    "netwrok_name": "",
-    "package_name": "",
-    "on_minutes": "",
-    "off_minute":"",
-    "sms":"",
-    "mb":"",
-    "social_mb":"",
-    "validity":"",
-    "price":"",
-    "activation_code": "",
+    "netwrok_name": "Hourly",
+    "package_name": "Jazz Super Ghanta Offer",
+    "on_minutes": "0",
+    "off_minute":"0",
+    "sms":"0",
+    "mb":"1 GB of Free Internet Data 1 Hour Only",
+    "social_mb":"0",
+    "validity":"1 Hour",
+    "price":"12",
+    "activation_code": "*638#",
     "deactivation_code": ""
   }
 ]
