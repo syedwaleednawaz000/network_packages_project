@@ -103,6 +103,7 @@
 // }
 
 
+import 'dart:async';
 import 'dart:io';
 
 import 'package:animations/animations.dart';
@@ -155,6 +156,7 @@ class _PackageSelectionScreenState extends State<PackageSelectionScreen> {
   );
 
 
+  bool timerValue = true;
 
 
   @override
@@ -162,6 +164,12 @@ class _PackageSelectionScreenState extends State<PackageSelectionScreen> {
     super.initState();
     myBanner.load();
     _createInterstitialAd();
+    Timer(Duration(seconds: 3), (){
+      timerValue = false;
+      setState(() {
+
+      });
+    });
 
   }
   void _createInterstitialAd() {
@@ -226,7 +234,13 @@ class _PackageSelectionScreenState extends State<PackageSelectionScreen> {
         title: "All Ufone Packages",
       ),
       backgroundColor: AppColors.backgroundBlackColor,
-      body: PageTransitionSwitcher(
+      body: timerValue ?Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircularProgressIndicator(color: Colors.white,),
+          Text("براہ کرم 3 سیکنڈ انتظار کریں۔",textDirection: TextDirection.rtl,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
+        ],
+      ),) : PageTransitionSwitcher(
         duration: const Duration(milliseconds: 500),
         reverse: !_largePhoto,
         transitionBuilder: (
