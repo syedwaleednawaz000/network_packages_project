@@ -28,7 +28,28 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
     contentUrl: 'http://foo.com/bar.html',
     nonPersonalizedAds: true,
   );
-
+  Timer? _timer = Timer(const Duration(microseconds: 0), (){});
+  int _start = 0;
+  void startTimer() {
+    const oneSec = Duration(seconds: 1);
+    // _start = 0;
+    _timer = Timer.periodic(
+      oneSec,
+          (Timer timer) {
+        // for(int index = 0 ; index < weeklyDays.length ; index++){
+        if (_start >= 3) {
+          setState(() {
+            timer.cancel();
+          });
+        } else {
+          setState(() {
+            _start++;
+          });
+        }
+        // }
+      },
+    );
+  }
   InterstitialAd? _interstitialAd;
   int _numInterstitialLoadAttempts = 0;
 
@@ -48,6 +69,7 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
   @override
   void initState() {
     super.initState();
+    startTimer();
     myBanner.load();
     _createInterstitialAd();
     Timer(Duration(seconds: 3), (){
@@ -120,7 +142,7 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircularProgressIndicator(color: Colors.white,),
-          Text("براہ کرم 3 سیکنڈ انتظار کریں۔",textDirection: TextDirection.rtl,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
+          Text(" براہ کرم ${_start.toString()} سیکنڈ انتظار کریں۔ ",textDirection: TextDirection.rtl,style: TextStyle(color: _start == 1 ? Colors.green: _start == 2 ? Colors.red:  Colors.white,fontWeight: FontWeight.bold),)
         ],
       ),): SafeArea(
         child: Container(
@@ -131,6 +153,7 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
             children: [
               InkWell(
                 onTap: (){
+                  _showInterstitialAd();
                   Get.to(()=> MobileCodeDetailScreen(
                     index: 0,
                     image: 'assets/images/android_logo.png',

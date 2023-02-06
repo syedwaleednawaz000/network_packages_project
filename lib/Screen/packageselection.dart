@@ -135,6 +135,28 @@ class _PackageSelectionScreenState extends State<PackageSelectionScreen> {
     "Monthly",
     "Yearly",
   ];
+  Timer? _timer = Timer(const Duration(microseconds: 0), (){});
+  int _start = 0;
+  void startTimer() {
+    const oneSec = Duration(seconds: 1);
+    // _start = 0;
+    _timer = Timer.periodic(
+      oneSec,
+          (Timer timer) {
+        // for(int index = 0 ; index < weeklyDays.length ; index++){
+        if (_start >= 3) {
+          setState(() {
+            timer.cancel();
+          });
+        } else {
+          setState(() {
+            _start++;
+          });
+        }
+        // }
+      },
+    );
+  }
   static int maxFailedLoadAttempts = 3;
 
   static final AdRequest request = AdRequest(
@@ -162,6 +184,7 @@ class _PackageSelectionScreenState extends State<PackageSelectionScreen> {
   @override
   void initState() {
     super.initState();
+    startTimer();
     myBanner.load();
     _createInterstitialAd();
     Timer(Duration(seconds: 3), (){
@@ -238,7 +261,7 @@ class _PackageSelectionScreenState extends State<PackageSelectionScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircularProgressIndicator(color: Colors.white,),
-          Text("براہ کرم 3 سیکنڈ انتظار کریں۔",textDirection: TextDirection.rtl,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)
+          Text(" براہ کرم ${_start.toString()} سیکنڈ انتظار کریں۔ ",textDirection: TextDirection.rtl,style: TextStyle(color: _start == 1 ? Colors.green: _start == 2 ? Colors.red:  Colors.white,fontWeight: FontWeight.bold),)
         ],
       ),) : PageTransitionSwitcher(
         duration: const Duration(milliseconds: 500),
