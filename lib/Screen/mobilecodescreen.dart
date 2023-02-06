@@ -28,15 +28,15 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
     contentUrl: 'http://foo.com/bar.html',
     nonPersonalizedAds: true,
   );
-  Timer? _timer = Timer(const Duration(microseconds: 0), (){});
+  Timer? _timer = Timer(const Duration(microseconds: 0), () {});
   int _start = 0;
+
   void startTimer() {
     const oneSec = Duration(seconds: 1);
     // _start = 0;
     _timer = Timer.periodic(
       oneSec,
-          (Timer timer) {
-        // for(int index = 0 ; index < weeklyDays.length ; index++){
+      (Timer timer) {
         if (_start >= 3) {
           setState(() {
             timer.cancel();
@@ -50,9 +50,9 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
       },
     );
   }
+
   InterstitialAd? _interstitialAd;
   int _numInterstitialLoadAttempts = 0;
-
 
   bool _largePhoto = false;
   final BannerAd myBanner = BannerAd(
@@ -62,9 +62,7 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
     listener: BannerAdListener(),
   );
 
-
   bool timerValue = true;
-
 
   @override
   void initState() {
@@ -72,14 +70,12 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
     startTimer();
     myBanner.load();
     _createInterstitialAd();
-    Timer(Duration(seconds: 3), (){
+    Timer(Duration(seconds: 3), () {
       timerValue = false;
-      setState(() {
-
-      });
+      setState(() {});
     });
-
   }
+
   void _createInterstitialAd() {
     InterstitialAd.load(
         adUnitId: Platform.isAndroid
@@ -127,7 +123,6 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
     _interstitialAd = null;
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,79 +133,112 @@ class _MobileCodeScreenState extends State<MobileCodeScreen> {
         height: myBanner.size.height.toDouble(),
         child: AdWidget(ad: myBanner),
       ),
-      body: timerValue ? Center(child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircularProgressIndicator(color: Colors.white,),
-          Text(" براہ کرم ${_start.toString()} سیکنڈ انتظار کریں۔ ",textDirection: TextDirection.rtl,style: TextStyle(color: _start == 1 ? Colors.green: _start == 2 ? Colors.red:  Colors.white,fontWeight: FontWeight.bold),)
-        ],
-      ),): SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: (){
-                  _showInterstitialAd();
-                  Get.to(()=> MobileCodeDetailScreen(
-                    index: 0,
-                    image: 'assets/images/android_logo.png',
-                    name: "Android",
-                  ));
-                },
-                child: Container(
-                  height: 70,
-                  margin: EdgeInsets.symmetric(vertical: 5.w),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 5),
-                        child: Image.asset('assets/images/android_logo.png',width: 80.w,),
-                      ),
-                      SizedBox(width: 10.w,),
-                      Text('Hidden key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
-                    ],
+      body: timerValue
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(
+                    color: Colors.white,
                   ),
+                  Text(
+                    " براہ کرم ${_start.toString()} سیکنڈ انتظار کریں۔ ",
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(
+                        color: _start == 1
+                            ? Colors.green
+                            : _start == 2
+                                ? Colors.red
+                                : Colors.white,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            )
+          : SafeArea(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        _showInterstitialAd();
+                        Get.to(() => MobileCodeDetailScreen(
+                              index: 0,
+                              image: 'assets/images/android_logo.png',
+                              name: "Android",
+                            ));
+                      },
+                      child: Container(
+                        height: 70,
+                        margin: EdgeInsets.symmetric(vertical: 5.w),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(bottom: 5),
+                              child: Image.asset(
+                                'assets/images/android_logo.png',
+                                width: 80.w,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.w,
+                            ),
+                            Text(
+                              'Hidden key',
+                              style: TextStyle(
+                                  fontSize: 25.sp, fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Get.to(() => MobileCodeDetailScreen(
+                              name: "iOS",
+                              index: 1,
+                              image: 'assets/images/ios_logo.png',
+                            ));
+                      },
+                      child: Container(
+                        height: 70.h,
+                        margin: EdgeInsets.symmetric(vertical: 5.w),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset('assets/images/ios_logo.png',
+                                width: 80.w),
+                            SizedBox(
+                              width: 10.h,
+                            ),
+                            Text(
+                              'Hidden key',
+                              style: TextStyle(
+                                  fontSize: 25.sp, fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              SizedBox(height: 10.h,),
-              InkWell(
-                onTap: (){
-                  Get.to(()=> MobileCodeDetailScreen(
-                    name: "iOS",
-                    index: 1,
-                    image: 'assets/images/ios_logo.png',
-                  ));
-                },
-                child: Container(
-                  height: 70.h,
-                  margin: EdgeInsets.symmetric(vertical: 5.w),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-
-                      Image.asset('assets/images/ios_logo.png',width: 80.w),
-                      SizedBox(width: 10.h,),
-                      Text('Hidden key',style: TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold),)
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+            ),
     );
   }
 }
